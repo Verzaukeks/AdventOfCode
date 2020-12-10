@@ -2,7 +2,7 @@ package y2020
 
 import y2020.inputs.Files
 
-object d4 {
+object d04 {
     fun a1() {
         val input = Files[4].readText()
         var amount = 0

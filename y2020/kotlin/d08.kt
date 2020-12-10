@@ -3,7 +3,7 @@ package y2020
 import y2020.inputs.Files
 import kotlin.system.exitProcess
 
-object d8 {
+object d08 {
     fun a1() {
         val input = Files[8].readLines()
 

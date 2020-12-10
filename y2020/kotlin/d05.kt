@@ -2,7 +2,7 @@ package y2020
 
 import y2020.inputs.Files
 
-object d5 {
+object d05 {
     fun a1() {
         val input  = Files[5]
                 .readText()

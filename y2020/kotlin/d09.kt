@@ -4,7 +4,7 @@ import y2020.inputs.Files
 import kotlin.math.max
 import kotlin.math.min
 
-object d9 {
+object d09 {
     fun a1(
             input: List<Long> = Files[9].readLines().map { it.toLong() },
             printOutput: Boolean = true

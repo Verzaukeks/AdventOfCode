@@ -2,7 +2,7 @@ package y2020
 
 import y2020.inputs.Files
 
-object d7 {
+object d07 {
     data class Contain(val bag: String, val number: Int)
 
     // overkill?

@@ -2,7 +2,7 @@ package y2020
 
 import y2020.inputs.Files
 
-object d3 {
+object d03 {
     fun a1() {
         println(slope(3, 1))
     }
