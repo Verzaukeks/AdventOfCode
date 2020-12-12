@@ -68,24 +68,24 @@ object d12 {
 
         var north = 0
         var east = 0
-        var waypointNorthRealtive = 1
+        var waypointNorthRelative = 1
         var waypointEastRelative = 10
 
         for (command in input)
             when (command.action) {
-                "N" -> waypointNorthRealtive += command.amount
-                "S" -> waypointNorthRealtive -= command.amount
+                "N" -> waypointNorthRelative += command.amount
+                "S" -> waypointNorthRelative -= command.amount
                 "E" ->  waypointEastRelative += command.amount
                 "W" ->  waypointEastRelative -= command.amount
                 "F" -> {
-                    north += command.amount * waypointNorthRealtive
+                    north += command.amount * waypointNorthRelative
                      east += command.amount * waypointEastRelative
                 }
                 "L" -> {
                     var a = (command.amount % 360) / 90
                     while (a-- > 0) {
-                        val tmp = waypointNorthRealtive
-                        waypointNorthRealtive = waypointEastRelative
+                        val tmp = waypointNorthRelative
+                        waypointNorthRelative = waypointEastRelative
                         waypointEastRelative = -tmp
                     }
                 }
@@ -93,8 +93,8 @@ object d12 {
                     var a = (command.amount % 360) / 90
                     while (a-- > 0) {
                         val tmp = waypointEastRelative
-                        waypointEastRelative = waypointNorthRealtive
-                        waypointNorthRealtive = -tmp
+                        waypointEastRelative = waypointNorthRelative
+                        waypointNorthRelative = -tmp
                     }
                 }
                 else -> error("unknown command: ${command.action}")
