@@ -21,7 +21,7 @@ object d11 {
         val width = input.split("\n")[0].length
         val height = input.split("\n").size
         val masks = ArrayList<ArrayList<IntRange>>()
-        for (t in 1..8) masks += ArrayList<IntRange>()
+        repeat(8) { masks += ArrayList<IntRange>() }
 
         for (t in 1 until max(width, height)) {
             masks[0].add(-t.. 0) // left
@@ -56,20 +56,19 @@ object d11 {
                 val x = i % width
                 val y = i / width
 
-                m@for (mask in masks) {
+                m@for (mask in masks)
                     for (offset in mask) {
                         val nx = x + offset.first
                         val ny = y + offset.last
                         val ni = nx + ny * width
 
-                        if (nx < 0 || nx >= width) if (oneMask) continue else continue@m
+                        if (nx < 0 || nx >=  width) if (oneMask) continue else continue@m
                         if (ny < 0 || ny >= height) if (oneMask) continue else continue@m
                         if (ain[ni] == '#') count ++
                         if (ain[ni] != '.' && !oneMask) continue@m
                     }
-                }
 
-                if (ain[i] == 'L' && count == 0) { aout[i] = '#' ; changed = true }
+                     if (ain[i] == 'L' && count == 0)         { aout[i] = '#' ; changed = true }
                 else if (ain[i] == '#' && count >= tolerance) { aout[i] = 'L' ; changed = true }
                 else aout[i] = ain[i]
             }
