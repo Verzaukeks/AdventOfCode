@@ -4,9 +4,9 @@ import kotlin.math.max
 import kotlin.math.min
 
 object d09 {
-    fun a1(
+    fun a1() { println(a1_()) }
+    fun a1_(
             input: List<Long> = Files[9].readLines().map { it.toLong() },
-            printOutput: Boolean = true
     ): Long {
 
         val preamble = LongArray(25)
@@ -27,7 +27,6 @@ object d09 {
                     }
 
             if (!has) {
-                if (printOutput) println(n)
                 return n
             }
 
@@ -38,13 +37,12 @@ object d09 {
             i ++
         }
 
-        if (printOutput) println("-1")
         return -1L
     }
 
     fun a2() {
         val input = Files[9].readLines().map { it.toLong() }
-        val n = a1(input, false)
+        val n = a1_(input)
         if (n == -1L) return
 
         for (i in input.indices) {

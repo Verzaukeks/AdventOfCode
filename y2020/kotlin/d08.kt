@@ -19,7 +19,7 @@ object d08 {
 
         val unit = { fromOp: String, toOp: String ->
             var i = 0
-            while (i < input.length) {
+            a@while (i < input.length) {
                 val foundAt = input.indexOf(fromOp, i)
                 if (foundAt == -1) break
 
@@ -27,17 +27,17 @@ object d08 {
                 i = newInput.indexOf("\n", foundAt) + 1
                 if (i == 0) break // no more \n found
 
-                runCatching {
+                val r = runCatching {
                     val accu = program(newInput.split("\n"))
                     println("accu = $accu")
-                    exitProcess(0)
-                }.onFailure {}
+                }
+                if (r.isSuccess) break@a
             }
         }
 
         unit("jmp", "nop")
         unit("nop", "jmp")
-        println("nothing found")
+        //println("nothing found")
     }
 
     fun program(input: List<String>): Int {
