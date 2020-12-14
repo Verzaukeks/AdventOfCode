@@ -1,6 +1,5 @@
 package y2020
 
-import y2020.inputs.Files
 import kotlin.math.max
 
 object d11 {

@@ -1,7 +1,5 @@
 package y2020
 
-import y2020.inputs.Files
-
 object d05 {
     fun a1() {
         val input  = Files[5]

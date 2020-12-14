@@ -1,6 +1,5 @@
 package y2020
 
-import y2020.inputs.Files
 import kotlin.math.absoluteValue
 
 object d12 {

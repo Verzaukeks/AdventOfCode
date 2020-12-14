@@ -1,6 +1,5 @@
 package y2020
 
-import y2020.inputs.Files
 import kotlin.system.exitProcess
 
 object d08 {
