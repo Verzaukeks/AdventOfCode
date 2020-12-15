@@ -18,18 +18,23 @@ fun main(args: Array<String>) {
             "12" to arrayOf(d12::a1, d12::a2),
             "13" to arrayOf(d13::a1, d13::a2),
             "14" to arrayOf(d14::a1, d14::a2),
+            "15" to arrayOf(d15::a1, d15::a2),
     )
 
     val time = { func: () -> Any ->
         val start = System.nanoTime()
         func()
         val stop = System.nanoTime()
-        (stop - start + 50000) / 100000 / 10.0
+        stop - start
+    }
+
+    val trim = { nanoTime: Long ->
+        (nanoTime + 50000) / 100000 / 10.0
     }
 
     var content = ""
-    content += "| Day | a1 | a2 |\n"
-    content += "| ---: | ---: | ---: |\n"
+    content += "| Day | a1 | a2 | a1+a2 |\n"
+    content += "| :---: | ---: | ---: | ---: |\n"
 
     for ((day, funcs) in map.entries) {
         println("\nday $day")
@@ -38,7 +43,7 @@ fun main(args: Array<String>) {
         val a1 = time(funcs[0])
         val a2 = time(funcs[1])
 
-        content += "| $day | $a1 ms | $a2 ms |\n"
+        content += "| $day | ${trim(a1)} ms | ${trim(a2)} ms | ${trim(a1+a2)} ms |\n"
     }
 
     File("timings.md").writeText(content)
