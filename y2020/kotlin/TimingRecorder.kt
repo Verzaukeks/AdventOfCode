@@ -19,6 +19,7 @@ fun main(args: Array<String>) {
             "13" to arrayOf(d13::a1, d13::a2),
             "14" to arrayOf(d14::a1, d14::a2),
             "15" to arrayOf(d15::a1, d15::a2),
+            "16" to arrayOf(d16::a1, d16::a2),
     )
 
     val time = { func: () -> Any ->
