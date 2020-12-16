@@ -1,10 +1,12 @@
 package y2020
 
-import kotlin.system.exitProcess
+object Day08 : Day() {
 
-object d08 {
-    fun a1() {
-        val input = Files[8].readLines()
+    override val day = 8
+    override val name = "Handheld Halting"
+
+    override fun a1() {
+        val input = INPUT.readLines()
 
         runCatching {
             program(input)
@@ -14,8 +16,8 @@ object d08 {
     }
 
     // brute force :D
-    fun a2() {
-        val input = Files[8].readText().replace("\r", "")
+    override fun a2() {
+        val input = INPUT.readText().replace("\r", "")
 
         val unit = { fromOp: String, toOp: String ->
             var i = 0

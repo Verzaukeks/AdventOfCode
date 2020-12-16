@@ -1,8 +1,12 @@
 package y2020
 
-object d13 {
-    fun a1() {
-        val input = Files[13].readLines()
+object Day13 : Day() {
+
+    override val day = 13
+    override val name = "Shuttle Search"
+
+    override fun a1() {
+        val input = INPUT.readLines()
 
         val timestamp = input[0].toInt()
         var busId = -1
@@ -23,8 +27,8 @@ object d13 {
         println(busId * (arrives - timestamp))
     }
 
-    fun a2() {
-        val input = Files[13].readLines()[1].split(",")
+    override fun a2() {
+        val input = INPUT.readLines()[1].split(",")
 
         // Chinese Remainder Theorem
         // x = (busId-index) (mod busId)   =>   x % busId = busId - index

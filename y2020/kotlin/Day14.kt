@@ -1,8 +1,12 @@
 package y2020
 
-object d14 {
-    fun a1() {
-        val input = Files[14].readLines()
+object Day14 : Day() {
+
+    override val day = 14
+    override val name = "Docking Data"
+
+    override fun a1() {
+        val input = INPUT.readLines()
 
         val memory = HashMap<Long, Long>()
         var maskAndZeros = 0L
@@ -26,8 +30,8 @@ object d14 {
         println(memory.values.sum())
     }
 
-    fun a2() {
-        val input = Files[14].readLines()
+    override fun a2() {
+        val input = INPUT.readLines()
 
         val memory = HashMap<Long, Long>()
         val maskFloating = ArrayList<Int>()

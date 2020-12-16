@@ -1,11 +1,15 @@
 package y2020
 
-object d03 {
-    fun a1() {
+object Day03 : Day() {
+
+    override val day = 3
+    override val name = "Toboggan Trajectory"
+
+    override fun a1() {
         println(slope(3, 1))
     }
 
-    fun a2() {
+    override fun a2() {
         val a = slope(1, 1)
         val b = slope(3, 1)
         val c = slope(5, 1)
@@ -15,8 +19,8 @@ object d03 {
     }
 
     fun slope(right: Int, down: Int): Int {
+        val input = INPUT.readLines()
         var trees = 0
-        val input = Files[3].readLines()
 
         var x = 0
         for (y in input.indices step down) {

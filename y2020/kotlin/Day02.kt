@@ -1,9 +1,12 @@
 package y2020
 
-object d02 {
-    fun a1() {
-        val input = Files[2]
-                .readLines()
+object Day02 : Day() {
+
+    override val day = 2
+    override val name = "Password Philosophy"
+
+    override fun a1() {
+        val input = INPUT.readLines()
 
         var valid = 0
 
@@ -21,9 +24,8 @@ object d02 {
         println("valid: $valid")
     }
 
-    fun a2() {
-        val input = Files[2]
-                .readLines()
+    override fun a2() {
+        val input = INPUT.readLines()
 
         var valid = 0
 

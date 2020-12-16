@@ -1,8 +1,12 @@
 package y2020
 
-object d04 {
-    fun a1() {
-        val input = Files[4].readText()
+object Day04 : Day() {
+
+    override val day = 4
+    override val name = "Passport Processing"
+
+    override fun a1() {
+        val input = INPUT.readText()
         var amount = 0
 
         val passports = input.split("\r\n\r\n")
@@ -22,8 +26,8 @@ object d04 {
         println(amount)
     }
 
-    fun a2() {
-        val input = Files[4].readText()
+    override fun a2() {
+        val input = INPUT.readText()
         var amount = 0
 
         val passports = input.split("\r\n\r\n")

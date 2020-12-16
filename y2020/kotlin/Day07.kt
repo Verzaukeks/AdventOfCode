@@ -1,11 +1,15 @@
 package y2020
 
-object d07 {
+object Day07 : Day() {
+
+    override val day = 7
+    override val name = "Handy Haversacks"
+
     data class Contain(val bag: String, val number: Int)
 
     // overkill?
-    fun a1() {
-        val input = Files[7].readLines()
+    override fun a1() {
+        val input = INPUT.readLines()
         val data = HashMap<String, ArrayList<Contain>>()
 
         val has = ArrayList<String>()
@@ -65,8 +69,8 @@ object d07 {
         println(has.size)
     }
 
-    fun a2() {
-        val input = Files[7].readLines()
+    override fun a2() {
+        val input = INPUT.readLines()
         val data = HashMap<String, ArrayList<Contain>>()
 
         for (line in input) {

@@ -2,8 +2,12 @@ package y2020
 
 import kotlin.math.max
 
-object d11 {
-    fun a1() {
+object Day11 : Day() {
+
+    override val day = 11
+    override val name = "Seating System"
+
+    override fun a1() {
         val masks = ArrayList<ArrayList<IntRange>>()
         masks += ArrayList<IntRange>()
 
@@ -15,8 +19,8 @@ object d11 {
         iterate(masks, 4, true)
     }
 
-    fun a2() {
-        val input = Files[11].readText().replace("\r", "")
+    override fun a2() {
+        val input = INPUT.readText().replace("\r", "")
         val width = input.split("\n")[0].length
         val height = input.split("\n").size
         val masks = ArrayList<ArrayList<IntRange>>()
@@ -37,7 +41,7 @@ object d11 {
     }
 
     fun iterate(masks: ArrayList<ArrayList<IntRange>>, tolerance: Int, oneMask: Boolean) {
-        val input = Files[11].readText().replace("\r", "")
+        val input = INPUT.readText().replace("\r", "")
         var ain = input.replace("\n", "").toCharArray()
         var aout = input.replace("\n", "").toCharArray()
 
@@ -84,7 +88,6 @@ object d11 {
             println()*/
         }
 
-        println()
         println(ain.count { it == '#' })
     }
 }

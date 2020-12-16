@@ -1,8 +1,12 @@
 package y2020
 
-object d15 {
-    fun a1() {
-        val input = Files[15].readText().split(",").map { it.toInt() }
+object Day15 : Day() {
+
+    override val day = 15
+    override val name = "Rambunctious Recitation"
+
+    override fun a1() {
+        val input = INPUT.readText().split(",").map { it.toInt() }
 
         val array = ArrayList<Int>()
         array += input
@@ -23,8 +27,8 @@ object d15 {
         println(array.last())
     }
 
-    fun a2() {
-        val input = Files[15].readText().split(",").map { it.toInt() }
+    override fun a2() {
+        val input = INPUT.readText().split(",").map { it.toInt() }
 
         // gimme that memory
         val map = IntArray(30000000)

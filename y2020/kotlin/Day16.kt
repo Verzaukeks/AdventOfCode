@@ -1,12 +1,16 @@
 package y2020
 
-object d16 {
+object Day16 : Day() {
+
+    override val day = 16
+    override val name = "Ticket Translation"
+
     data class Field(val name: String, val range1: IntRange, val range2: IntRange) {
         fun isValid(number: Int) = number in range1 || number in range2
     }
 
-    fun a1() {
-        val input = Files[16].readText().replace("\r", "")
+    override fun a1() {
+        val input = INPUT.readText().replace("\r", "")
 
         // parse fields    name: r-r or r-r
         val fields = ArrayList<Field>()
@@ -45,8 +49,8 @@ object d16 {
         println(errorRate)
     }
 
-    fun a2() {
-        val input = Files[16].readText().replace("\r", "")
+    override fun a2() {
+        val input = INPUT.readText().replace("\r", "")
 
         // parse fields    name: r-r or r-r
         val fields = ArrayList<Field>()

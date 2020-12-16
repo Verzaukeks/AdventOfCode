@@ -1,8 +1,12 @@
 package y2020
 
-object d06 {
-    fun a1() {
-        val input = Files[6].readText()
+object Day06 : Day() {
+
+    override val day = 6
+    override val name = "Custom Customs"
+
+    override fun a1() {
+        val input = INPUT.readText()
         val questions = ArrayList<Char>()
         var sum = 0
 
@@ -22,8 +26,8 @@ object d06 {
         println(sum)
     }
 
-    fun a2() {
-        val input = Files[6].readText()
+    override fun a2() {
+        val input = INPUT.readText()
         var sum = 0
 
         for (group in input.split("\r\n\r\n")) {

@@ -2,11 +2,16 @@ package y2020
 
 import kotlin.math.absoluteValue
 
-object d12 {
+object Day12 : Day() {
+
+    override val day = 12
+    override val name = "Rain Risk"
+
     data class Command(val action: String, val amount: Int)
 
-    fun a1() {
-        val input = Files[12].readLines()
+    override fun a1() {
+        val input = INPUT
+                .readLines()
                 .map {
                     Command(it.substring(0, 1),
                             it.substring(1).toInt())
@@ -58,8 +63,9 @@ object d12 {
         println(north.absoluteValue + east.absoluteValue)
     }
 
-    fun a2() {
-        val input = Files[12].readLines()
+    override fun a2() {
+        val input = INPUT
+                .readLines()
                 .map {
                     Command(it.substring(0, 1),
                             it.substring(1).toInt())

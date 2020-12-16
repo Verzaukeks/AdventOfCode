@@ -1,8 +1,12 @@
 package y2020
 
-object d10 {
-    fun a1() {
-        val input = Files[10]
+object Day10 : Day() {
+
+    override val day = 10
+    override val name = "Adapter Array"
+
+    override fun a1() {
+        val input = INPUT
                 .readLines()
                 .map { it.toInt() }
                 .sorted()
@@ -20,8 +24,8 @@ object d10 {
         println(di[1] * di[3])
     }
 
-    fun a2() {
-        val input = Files[10]
+    override fun a2() {
+        val input = INPUT
                 .readLines()
                 .map { it.toInt() }
                 .sorted()
@@ -38,10 +42,10 @@ object d10 {
             if (i-2 >= 0 && (input[i] - 2 == input[i-2] || input[i] - 3 == input[i-2])) solutions[i] += solutions[i-2]
             if (i-3 >= 0 && (                              input[i] - 3 == input[i-3])) solutions[i] += solutions[i-3]
 
-            if (i-3 >= 0) print((if (                            input[i]-3 == input[i-3]) " %d  " else "[%d] ").replace("%d", "${input[i-3]}"))
-            if (i-2 >= 0) print((if (input[i]-2 == input[i-2] || input[i]-3 == input[i-2]) " %d  " else "[%d] ").replace("%d", "${input[i-2]}"))
-            print(" ${input[i-1]}  ")
-            println(" ${input[i]}")
+            //if (i-3 >= 0) print((if (                            input[i]-3 == input[i-3]) " %d  " else "[%d] ").replace("%d", "${input[i-3]}"))
+            //if (i-2 >= 0) print((if (input[i]-2 == input[i-2] || input[i]-3 == input[i-2]) " %d  " else "[%d] ").replace("%d", "${input[i-2]}"))
+            //print(" ${input[i-1]}  ")
+            //println(" ${input[i]}")
         }
 
         println(solutions.last())

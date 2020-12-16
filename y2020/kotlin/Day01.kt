@@ -1,27 +1,30 @@
 package y2020
 
-object d01 {
-    fun a1() {
-        val input = Files[1]
+object Day01 : Day() {
+
+    override val day = 1
+    override val name = "Report Repair"
+
+    override fun a1() {
+        val input = INPUT
                 .readLines()
                 .map { s -> s.toInt() }
                 .sorted()
 
-        a@for (a in input) {
+        a@for (a in input)
             b@for (b in input) {
                 if (a + b > 2020) break@b
                 if (a + b == 2020) return println(a * b)
             }
-        }
     }
 
-    fun a2() {
-        val input = Files[1]
+    override fun a2() {
+        val input = INPUT
                 .readLines()
                 .map { s -> s.toInt() }
                 .sorted()
 
-        a@for (a in input) {
+        a@for (a in input)
             b@for (b in input) {
                 if (a + b > 2020) break@b
                 c@for (c in input) {
@@ -29,6 +32,5 @@ object d01 {
                     if (a + b + c == 2020) return println(a * b * c)
                 }
             }
-        }
     }
 }

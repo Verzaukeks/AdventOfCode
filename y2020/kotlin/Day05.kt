@@ -1,8 +1,12 @@
 package y2020
 
-object d05 {
-    fun a1() {
-        val input  = Files[5]
+object Day05 : Day() {
+
+    override val day = 5
+    override val name = "Binary Boarding"
+
+    override fun a1() {
+        val input  = INPUT
                 .readText()
                 .replace("F", "0")
                 .replace("B", "1")
@@ -15,8 +19,8 @@ object d05 {
         println(input.last())
     }
 
-    fun a2() {
-        val input = Files[5].readText()
+    override fun a2() {
+        val input = INPUT.readText()
                 .replace("F", "0")
                 .replace("B", "1")
                 .replace("L", "0")
