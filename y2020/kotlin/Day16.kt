@@ -84,6 +84,7 @@ object Day16 : Day() {
                         continue@num
                 }
                 ntIt.remove()
+                break@num
             }
         }
 
