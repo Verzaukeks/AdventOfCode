@@ -95,7 +95,7 @@ object Day17 : Day() {
         println(active)
     }
 
-    // easily expand to 4 dimensions
+    // expand to 4 dimensions
     override fun a2() {
         val size = 20 // manually increase until the result no longer changes
         val sizeHalf = size / 2
