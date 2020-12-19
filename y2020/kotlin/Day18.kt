@@ -15,7 +15,7 @@ object Day18 : Day() {
         var content = _content
 
         // as long as parentheses exist, take the first parenthesis that does not contain parentheses itself and evaluate it
-        var regex = "\\([^()]+\\)".toRegex()
+        var regex = """\([^()]+\)""".toRegex()
         while (true) {
             val match = regex.find(content) ?: break
             val value = parseA1(match.value.substring(1, match.value.length-1))
@@ -23,7 +23,7 @@ object Day18 : Day() {
         }
 
         // number +/* number          +/* indifferent, first come first serve
-        regex = "[0-9]+.[+*].[0-9]+".toRegex()
+        regex = """\d+.[+*].\d+""".toRegex()
         while (true) {
             val match = regex.find(content) ?: break
             val split = match.value.split(" + ", " * ")
@@ -33,7 +33,7 @@ object Day18 : Day() {
                     val value = split[0].toLong() + split[1].toLong()
                     content = content.replaceRange(match.range, "$value")
                 }
-                "*" in match.value-> {
+                "*" in match.value -> {
                     val value = split[0].toLong() * split[1].toLong()
                     content = content.replaceRange(match.range, "$value")
                 }
@@ -53,7 +53,7 @@ object Day18 : Day() {
         var content = _content
 
         // as long as parentheses exist, take the first parenthesis that does not contain parentheses itself and evaluate it
-        var regex = "\\([^()]+\\)".toRegex()
+        var regex = """\([^()]+\)""".toRegex()
         while (true) {
             val match = regex.find(content) ?: break
             val value = parseA2(match.value.substring(1, match.value.length-1))
@@ -61,7 +61,7 @@ object Day18 : Day() {
         }
 
         // number + number          +/* not indifferent, now + afterwards *
-        regex = "[0-9]+.[+].[0-9]+".toRegex()
+        regex = """\d+.\+.\d+""".toRegex()
         while (true) {
             val match = regex.find(content) ?: break
             val split = match.value.split(" + ")
@@ -71,7 +71,7 @@ object Day18 : Day() {
         }
 
         // number * number          +/* not indifferent, before + now *
-        regex = "[0-9]+.[*].[0-9]+".toRegex()
+        regex = """\d+.\*.\d+""".toRegex()
         while (true) {
             val match = regex.find(content) ?: break
             val split = match.value.split(" * ")
