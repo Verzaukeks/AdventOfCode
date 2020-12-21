@@ -4,13 +4,199 @@ import kotlin.math.sqrt
 
 object Day20 : Day() {
 
+    override val day = 20
+    override val name = "Jurassic Jigsaw"
+
+    private const val TOP = 0
+    private const val LEFT = 1
+    private const val BOTTOM = 2
+    private const val RIGHT = 3
+    private val CONNECTS = intArrayOf(BOTTOM, RIGHT, TOP, LEFT)
+
+    data class Tile(val id: Int, val size: Int, var content: String) {
+        val faces = IntArray(4)
+        var locked = false
+
+        private val range = 0 until size
+        private val rangeBottom = (size * size - size) until (size * size)
+
+        init { updateFaces() }
+
+        fun rotate(): Tile {
+            val out = content.toCharArray()
+            for (y in range) for (x in range) {
+                val ny = size-1 - x
+                out[ny*size + y] = content[y*size + x]
+            }
+
+            content = out.concatToString()
+            updateFaces()
+            return this
+        }
+
+        fun flip(): Tile {
+            val out = content.toCharArray()
+            for (y in range) for (x in range) {
+                val ny = size-1 - y
+                out[ny*size + x] = content[y*size + x]
+            }
+
+            content = out.concatToString()
+            updateFaces()
+            return this
+        }
+
+        private fun updateFaces() {
+            if (size != 10) return
+            faces[TOP] = face { it in range }
+            faces[LEFT] = face { it % size == 0 }
+            faces[BOTTOM] = face { it in rangeBottom }
+            faces[RIGHT] = face { (it+1) % size == 0 }
+        }
+
+        private fun face(predicate: (Int) -> Boolean): Int {
+            var out = ""
+            for (index in content.indices)
+                if (predicate(index)) out += content[index]
+            return out.replace(".", "0").replace("#", "1").toInt(2)
+        }
+
+        fun insert(offX: Int, offY: Int, array: Array<CharArray>) {
+            for (y in 1 until size-1)
+                for (x in 1 until size-1) {
+                    val c = content[y*size + x]
+                    array[offY*(size-2) + y-1][offX*(size-2) + x-1] = c
+                }
+        }
+    }
+
+    override fun a1() {
+        val tiles = INPUT.readText().replace("\r", "").split("\n\n")
+                .map {
+                    val id = it.substringAfter(" ").substringBefore(":").toInt()
+                    val content = it.substringAfter("\n").replace("\n", "")
+                    Tile(id, 10, content)
+                }
+
+        var tile = tiles[0]
+        while (adjacent(tile, TOP, tiles)?.also { tile = it } != null);
+        while (adjacent(tile, LEFT, tiles)?.also { tile = it } != null);
+
+        var product = 1L * tile.id
+        while (adjacent(tile, RIGHT, tiles, true)?.also { tile = it } != null); product *= tile.id
+        while (adjacent(tile, BOTTOM, tiles, true)?.also { tile = it } != null); product *= tile.id
+        while (adjacent(tile, LEFT, tiles, true)?.also { tile = it } != null); product *= tile.id
+
+        println(product)
+    }
+
+    override fun a2() {
+        val tiles = INPUT.readText().replace("\r", "").split("\n\n")
+                .map {
+                    val id = it.substringAfter(" ").substringBefore(":").toInt()
+                    val content = it.substringAfter("\n").replace("\n", "")
+                    Tile(id, 10, content)
+                }
+
+        var tile = tiles[0]
+        while (adjacent(tile, TOP, tiles)?.also { tile = it } != null);
+        while (adjacent(tile, LEFT, tiles)?.also { tile = it } != null);
+
+
+
+        var offX = 0
+        var offY = 0
+        val size = 8 * sqrt(tiles.size.toDouble()).toInt()
+        val array = Array(size) { CharArray(size) { '/' } }
+
+        var tileY = tile.apply { locked = true }
+        while (true) {
+
+            var tileX = tileY
+            while (true) {
+                tileX.insert(offX++, offY, array)
+                tileX = adjacent(tileX, RIGHT, tiles, true) ?: break
+            }
+
+            offX = 0 ; offY ++
+            tileY = adjacent(tileY, BOTTOM, tiles, true) ?: break
+        }
+
+        val content = array.joinToString("") { it.concatToString() }
+        tile = Tile(-1, size, content)
+
+
+
+        val monster = "#.{${size-19}}#.{4}##.{4}##.{4}###.{${size-19}}#.{2}#.{2}#.{2}#.{2}#.{2}#".toRegex()
+        if (
+            monster.find(tile.content) != null ||
+            monster.find(tile.rotate().content) != null ||
+            monster.find(tile.rotate().content) != null ||
+            monster.find(tile.rotate().content) != null ||
+            monster.find(tile.rotate().flip().content) != null ||
+            monster.find(tile.rotate().content) != null ||
+            monster.find(tile.rotate().content) != null ||
+            monster.find(tile.rotate().content) != null
+        );
+
+        while (true) {
+            val match = monster.find(tile.content) ?: break
+            val a = tile.content.toCharArray()
+            var i = match.range.first
+
+            a[i] = 'O'; i++; i += size - 19
+            a[i] = 'O'; i++; i += 4
+            a[i] = 'O'; i++
+            a[i] = 'O'; i++; i += 4
+            a[i] = 'O'; i++
+            a[i] = 'O'; i++; i += 4
+            a[i] = 'O'; i++
+            a[i] = 'O'; i++
+            a[i] = 'O'; i++; i += size - 19
+            a[i] = 'O'; i++; i += 2
+            a[i] = 'O'; i++; i += 2
+            a[i] = 'O'; i++; i += 2
+            a[i] = 'O'; i++; i += 2
+            a[i] = 'O'; i++; i += 2
+            a[i] = 'O'
+
+            tile.content = a.concatToString()
+        }
+
+
+
+        println(tile.content.count { it == '#' })
+    }
+
+    private fun adjacent(tile: Tile, direction: Int, tiles: List<Tile>, lockTiles: Boolean = false): Tile? {
+        for (otherTile in tiles)
+            if (tile.id != otherTile.id && !otherTile.locked)
+                if (
+                    tile.faces[direction] == otherTile.faces[CONNECTS[direction]] ||
+                    tile.faces[direction] == otherTile.rotate().faces[CONNECTS[direction]] ||
+                    tile.faces[direction] == otherTile.rotate().faces[CONNECTS[direction]] ||
+                    tile.faces[direction] == otherTile.rotate().faces[CONNECTS[direction]] ||
+                    tile.faces[direction] == otherTile.rotate().flip().faces[CONNECTS[direction]] ||
+                    tile.faces[direction] == otherTile.rotate().faces[CONNECTS[direction]] ||
+                    tile.faces[direction] == otherTile.rotate().faces[CONNECTS[direction]] ||
+                    tile.faces[direction] == otherTile.rotate().faces[CONNECTS[direction]]
+                ) {
+                    otherTile.locked = lockTiles
+                    return otherTile
+                }
+        return null
+    }
+
+}
+
+object Day20old : Day() {
+
     /*
-        not very efficient,
-        and I am too lazy to improve it
+        not very efficient, but documented
      */
 
     override val day = 20
-    override val name = "Jurassic Jigsaw"
+    override val name = "Jurassic Jigsaw (Old)"
 
     /**
      * @param index index from tiles array
@@ -182,7 +368,6 @@ object Day20 : Day() {
         }
 
         // -> assign adjacent number
-        var edge: Tile? = null
         for (tile in tiles) {
             var adjacent = 0
 
@@ -202,16 +387,13 @@ object Day20 : Day() {
                     }
 
             tile.adjacent.number = adjacent
-
-            // i need an edge piece so that my align algorithm will work correctly, just take the first one
-            if (adjacent == 2 && edge == null) edge = tile
         }
 
-        // -> align tiles with each other
-        align(edge!!, tiles)
+        // -> align tiles with each other (recursive function)
+        align(tiles[0], tiles)
 
         // -> combine tiles to a big one (without borders)
-        // start from top left and proceed right (offX++), when the outermost right piece is reached, go onto the next line(offY++)
+        // start from top left and proceed right (offX++), when the outermost right piece is reached, go onto the next line (offY++)
         val lineSize = 8 * sqrt(tiles.size.toDouble()).toInt()
         val combinedContent = Array(lineSize) { Array(lineSize) { '/' } }
         val topLeft = tiles.first { it.adjacent.top == -1 && it.adjacent.left == -1 }
@@ -299,7 +481,6 @@ object Day20 : Day() {
 
     /**
      * find adjacent tiles for given tile and repeat the process for just found tiles
-     * (i do not know if it has to start from an edge)
      */
     private fun align(tile: Tile, tiles: List<Tile>) {
         if (tile.adjacent.number == tile.adjacent.count()) return
