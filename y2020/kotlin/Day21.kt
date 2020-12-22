@@ -81,8 +81,6 @@ object Day21 : Day() {
                 else finished = false
         }
 
-        for (allergen in map.keys.sorted())
-            print(",${map[allergen]!![0]}")
-        println()
+        map.keys.sorted().joinToString(",") { map[it]!![0] }.also(::println)
     }
 }

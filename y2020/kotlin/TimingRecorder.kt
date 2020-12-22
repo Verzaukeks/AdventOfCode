@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
             Day06, Day07, Day08, Day09, Day10,
             Day11, Day12, Day13, Day14, Day15,
             Day16, Day17, Day18, Day19, Day20,
-            Day21)
+            Day21, Day22)
 
     val time = { func: () -> Any ->
         val start = System.nanoTime() ; func()
@@ -16,9 +16,11 @@ fun main(args: Array<String>) {
     }
     val trim = { nanoTime: Long -> (nanoTime + 50000) / 100000 / 10.0 }
 
-    var content = ""
-    content += "| Day | a1 | a2 | a1+a2 |\n"
-    content += "| :---: | ---: | ---: | ---: |\n"
+    val delimiter = "### Possible Timings"
+    var content = File("README.md").readText().substringBefore(delimiter)
+    content += delimiter + "\n"
+    content += "| Day | | a1 | a2 | a1+a2 |\n"
+    content += "| ---: | :--- | ---: | ---: | ---: |\n"
 
     days.forEach { day ->
         println()
@@ -31,8 +33,8 @@ fun main(args: Array<String>) {
         val a1 = trim(timings[0] / 3)
         val a2 = trim(timings[1] / 3)
         val a12 = trim((timings[0] + timings[1]) / 3)
-        content += "| ${day.day} | $a1 ms | $a2 ms | $a12 ms |\n"
+        content += "| ${day.day} | ${day.name} | $a1 ms | $a2 ms | $a12 ms |\n"
     }
 
-    File("timings.md").writeText(content)
+    File("README.md").writeText(content)
 }
