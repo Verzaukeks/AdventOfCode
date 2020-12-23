@@ -92,7 +92,6 @@ object Day22 : Day() {
             if (player2.isEmpty()) return true
         }
     }
-    
 }
 
 fun ArrayList<Int>.copy(size: Int): ArrayList<Int> {
