@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
             Day06, Day07, Day08, Day09, Day10,
             Day11, Day12, Day13, Day14, Day15,
             Day16, Day17, Day18, Day19, Day20,
-            Day21, Day22, Day23, Day24)
+            Day21, Day22, Day23, Day24, Day25)
 
     val time = { func: () -> Any ->
         val start = System.nanoTime() ; func()
@@ -33,7 +33,9 @@ fun main(args: Array<String>) {
         val a1 = trim(timings[0] / 3)
         val a2 = trim(timings[1] / 3)
         val a12 = trim((timings[0] + timings[1]) / 3)
-        content += "| ${day.day} | ${day.name} | $a1 ms | $a2 ms | $a12 ms |\n"
+
+        if (day.day == 25) content += "| ${day.day} | ${day.name} | $a1 ms | / ms | $a12 ms |\n"
+        else content += "| ${day.day} | ${day.name} | $a1 ms | $a2 ms | $a12 ms |\n"
     }
 
     File("README.md").writeText(content)
