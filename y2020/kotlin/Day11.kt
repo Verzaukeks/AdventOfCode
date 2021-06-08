@@ -1,10 +1,9 @@
 package y2020
 
+import general.Day
 import kotlin.math.max
 
 object Day11 : Day() {
-
-    override val day = 11
     override val name = "Seating System"
 
     override fun a1() {

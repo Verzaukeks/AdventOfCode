@@ -1,10 +1,9 @@
 package y2020
 
+import general.Day
 import kotlin.math.absoluteValue
 
 object Day12 : Day() {
-
-    override val day = 12
     override val name = "Rain Risk"
 
     data class Command(val action: String, val amount: Int)

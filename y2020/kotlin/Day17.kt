@@ -1,8 +1,8 @@
 package y2020
 
-object Day17 : Day() {
+import general.Day
 
-    override val day = 17
+object Day17 : Day() {
     override val name = "Conway Cubes"
 
     data class Quad(val first: Int, val second: Int, val third: Int, val forth: Int)

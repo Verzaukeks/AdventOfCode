@@ -1,8 +1,8 @@
 package y2020
 
-object Day19 : Day() {
+import general.Day
 
-    override val day = 19
+object Day19 : Day() {
     override val name = "Monster Messages"
 
     data class Rule(val id: Int, var content: String, var isRegex: Boolean)

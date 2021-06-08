@@ -1,10 +1,9 @@
 package y2020
 
+import general.Day
 import kotlin.math.sqrt
 
 object Day20 : Day() {
-
-    override val day = 20
     override val name = "Jurassic Jigsaw"
 
     private const val TOP = 0
@@ -195,7 +194,6 @@ object Day20old : Day() {
         not very efficient, but documented
      */
 
-    override val day = 20
     override val name = "Jurassic Jigsaw (Old)"
 
     /**

@@ -1,8 +1,8 @@
 package y2020
 
-object Day24 : Day() {
+import general.Day
 
-    override val day = 24
+object Day24 : Day() {
     override val name = "Lobby Layout"
 
     data class Pos(val x: Int, val y: Int)

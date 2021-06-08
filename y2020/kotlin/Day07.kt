@@ -1,8 +1,8 @@
 package y2020
 
-object Day07 : Day() {
+import general.Day
 
-    override val day = 7
+object Day07 : Day() {
     override val name = "Handy Haversacks"
 
     data class Contain(val bag: String, val number: Int)

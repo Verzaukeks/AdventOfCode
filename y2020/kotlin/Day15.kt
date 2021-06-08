@@ -1,8 +1,8 @@
 package y2020
 
-object Day15 : Day() {
+import general.Day
 
-    override val day = 15
+object Day15 : Day() {
     override val name = "Rambunctious Recitation"
 
     override fun a1() {

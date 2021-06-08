@@ -1,8 +1,8 @@
 package y2020
 
-object Day14 : Day() {
+import general.Day
 
-    override val day = 14
+object Day14 : Day() {
     override val name = "Docking Data"
 
     override fun a1() {

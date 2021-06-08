@@ -1,11 +1,10 @@
 package y2020
 
+import general.Day
 import kotlin.math.max
 import kotlin.math.min
 
 object Day09 : Day() {
-
-    override val day = 9
     override val name = "Encoding Error"
 
     override fun a1() { println(a1_()) }

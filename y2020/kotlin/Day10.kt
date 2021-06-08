@@ -1,8 +1,8 @@
 package y2020
 
-object Day10 : Day() {
+import general.Day
 
-    override val day = 10
+object Day10 : Day() {
     override val name = "Adapter Array"
 
     override fun a1() {

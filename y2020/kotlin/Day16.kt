@@ -1,8 +1,8 @@
 package y2020
 
-object Day16 : Day() {
+import general.Day
 
-    override val day = 16
+object Day16 : Day() {
     override val name = "Ticket Translation"
 
     data class Field(val name: String, val range1: IntRange, val range2: IntRange) {
