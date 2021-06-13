@@ -6,7 +6,7 @@ import java.lang.Integer.min
 import java.util.*
 
 object Day11 : Day() {
-    override val name = ""
+    override val name = "Space Police"
 
     override fun a1() {
         val panel = TreeMap<String, Int>()  // ugly string, but i am to lazy to do something else
@@ -47,7 +47,6 @@ object Day11 : Day() {
 
     override fun a2() {
         val panel = TreeMap<String, Int>()  // ugly string, but i am to lazy to do something else
-        val painted = ArrayList<String>()
 
         var posX = 0
         var posY = 0
@@ -62,11 +61,7 @@ object Day11 : Day() {
             input = { panel["$posX,$posY"]?.toLong() ?: 0L },
             output = {
                 when (outputState++) {
-                    0 -> {
-                        val pos = "$posX,$posY"
-                        if (panel[pos] ?: 0L != it && pos !in painted) painted += pos
-                        panel[pos] = it.toInt()
-                    }
+                    0 -> panel["$posX,$posY"] = it.toInt()
                     1 -> {
                         when (it) {
                             0L -> moveY = moveX.also { moveX = -moveY }
