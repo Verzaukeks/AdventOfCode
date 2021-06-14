@@ -9,23 +9,12 @@ object Day07 : Day() {
         val data = INPUT.readText().split(",").map { it.toInt() }
         var output = 0
 
-        for (A in 0..4) {
-            val a = code1(data, A, 0)
-
-            for (B in 0..4) if (B != A) {
-                val b = code1(data, B, a)
-
-                for (C in 0..4) if (C != A && C != B) {
-                    val c = code1(data, C, b)
-
-                    for (D in 0..4) if (D != A && D != B && D != C) {
-                        val d = code1(data, D, c)
-
-                        for (E in 0..4) if (E != A && E != B && E != C && E != D) {
-                            val e = code1(data, E, d)
-
-                            if (e > output)
-                                output = e
+        for (A in 0..4) code1(data, A, 0).also { a ->
+        for (B in 0..4) if (B != A) code1(data, B, a).also { b ->
+        for (C in 0..4) if (C != A && C != B) code1(data, C, b).also { c ->
+        for (D in 0..4) if (D != A && D != B && D != C) code1(data, D, c).also { d ->
+        for (E in 0..4) if (E != A && E != B && E != C && E != D) code1(data, E, d).also { e ->
+        if (e > output) output = e
         }}}}}
 
         println(output)
