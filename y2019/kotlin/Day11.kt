@@ -1,6 +1,7 @@
 package y2019
 
 import general.Day
+import java.io.File
 import java.lang.Integer.max
 import java.lang.Integer.min
 import java.util.*
@@ -99,22 +100,18 @@ object Day11 : Day() {
             .split("\n").reversed().joinToString("\n")) // ups, my plane is mirrored on the x-axis :D (mine: [0,0] = bottom left) (expected: [0,0] = top left)
     }
 
-    class Ram(initial: List<Long> = listOf()) {
-        private val data = initial.toLongArray()
-        private val memory = TreeMap<Long, Long>()
-
-        operator fun set(address: Long, value: Long) = if (address < data.size) data[address.toInt()] = value else memory[address] = value
-        operator fun get(address: Long)              = if (address < data.size) data[address.toInt()]         else memory[address] ?: 0
-        override fun toString() = data.joinToString(",") + "," + memory.entries.joinToString(",") { "${it.key}:${it.value}" }
-    }
-    private fun intCodeProgram(
-        data: List<Long> = INPUT.readText().split(",").map { it.toLong() },
+    fun intCodeProgram(
+        dataFile: File = INPUT,
+        data: List<Long> = dataFile.readText().split(",").map { it.toLong() },
         input: () -> Long = { print("Gimme int: ") ; readLine()!!.toLong() },
         output: (Long) -> Unit = { println("Yeet $it") },
+        onLoad: (Day09.Ram) -> Unit = { },
     ) {
         val ram = Day09.Ram(data)
         var rb = 0L
         var pc = 0L
+
+        onLoad(ram)
 
         while (true) {
             val opcode = ram[pc]
