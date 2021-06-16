@@ -4,10 +4,6 @@ import general.Day
 import java.lang.Integer.max
 import kotlin.system.exitProcess
 
-fun main(args: Array<String>) {
-    Day15.a2()
-}
-
 object Day15 : Day() {
     override val name = "Oxygen System"
 
@@ -98,24 +94,15 @@ object Day15 : Day() {
                     else route += Pair(moveX, moveY)
                 }
 
-                if (skips++ % 10 == 0) {
+                if (it == 2L || skips++ % 10 == 0) {
                     ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor()
                     println(map)
                 }
 
                 if (it == 2L) {
-//                    posX = 0 ; posY = 0
-//                    for ((rx, ry) in route) {
-//                        map.set(posX, posY, '°')
-//                        posX += rx ; posY += ry
-//                    }
-
-                    ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor()
-                    println(map)
-
                     println("Oxygen System reached.")
                     println("${route.size} steps taken.")
-//                    exitProcess(0)
+                    exitProcess(0)
                 }
             }
         )
@@ -151,7 +138,7 @@ object Day15 : Day() {
                             ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor()
                             println(map)
 
-                            println("maxDistance = $maxDistance")
+                            println("$maxDistance steps needed to reach every nook and cranny.")
                             exitProcess(0)
                         }
                         throw Exception("No retrace possible")
