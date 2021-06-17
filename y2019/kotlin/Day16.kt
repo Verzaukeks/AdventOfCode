@@ -36,12 +36,21 @@ object Day16 : Day() {
     }
 
     override fun a2() {
+        // because fields are only influenced by following fields and not by previous fields
+        // we can reduce the string input to the earliest field we need
         val data = (INPUT.readText() * 10000).let { it.substring(it.substring(0, 7).toInt())  }
         val array = data.toCharArray().map { it - '0' }.toIntArray()
 
-        // shenanigans ;)
         repeat(100) {
             var sum = 0
+            // because the message offset is in the second half of the input array
+            // we are able to simplify the whole equation
+            // that is only possible through the pattern that emerges
+            // [..., 1, 1, 1, 1] = ?
+            // [..., 0, 1, 1, 1] = ?
+            // [..., 0, 0, 1, 1] = ?
+            // [..., 0  0, 0, 1] = ?
+            // as follows: from bottom to top only the 'current' value is added
             for (index in array.indices) {
                 sum += array[array.lastIndex - index]
                 array[array.lastIndex - index] = sum % 10
