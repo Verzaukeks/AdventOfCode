@@ -4,7 +4,8 @@ import y2021.*
 import java.io.File
 
 fun main(args: Array<String>) {
-    val y2021 = arrayOf<Day>()
+    val y2021 = arrayOf<Day>(
+        Day01)
 
     recordTimes(y2021)
 }

@@ -1,6 +1,9 @@
 ## [Advent of Code 2021](https://adventofcode.com/2021/)
 
 ### Possible Timings
+| Day | | a1 | a2 | a1+a2 |
+| ---: | :--- | ---: | ---: | ---: |
+| 1 | Sonar Sweep | 2.1 ms | 1.2 ms | 3.3 ms |
 
 ## [Advent of Code 2020](https://adventofcode.com/2020/)
 
