@@ -1,17 +1,12 @@
 package general
 
-import y2020.*
+import y2021.*
 import java.io.File
 
 fun main(args: Array<String>) {
-    val y2020 = arrayOf(
-            Day01, Day02, Day03, Day04, Day05,
-            Day06, Day07, Day08, Day09, Day10,
-            Day11, Day12, Day13, Day14, Day15,
-            Day16, Day17, Day18, Day19, Day20,
-            Day21, Day22, Day23, Day24, Day25)
+    val y2021 = arrayOf<Day>()
 
-    recordTimes(y2020)
+    recordTimes(y2021)
 }
 
 private fun recordTimes(days: Array<Day>) {
@@ -22,7 +17,9 @@ private fun recordTimes(days: Array<Day>) {
     val trim = { nanoTime: Long -> (nanoTime + 50000) / 100000 / 10.0 }
 
     val delimiter = "### Possible Timings"
-    var content = File("README.md").readText().substringBefore(delimiter)
+    var content = File("README.md").readText()
+    val after = content.substringAfter(delimiter).substringAfter("\n\n")
+    content = content.substringBefore(delimiter)
     content += delimiter + "\n"
     content += "| Day | | a1 | a2 | a1+a2 |\n"
     content += "| ---: | :--- | ---: | ---: | ---: |\n"
@@ -43,5 +40,5 @@ private fun recordTimes(days: Array<Day>) {
         else content += "| ${day.day} | ${day.name} | $a1 ms | $a2 ms | $a12 ms |\n"
     }
 
-    File("README.md").writeText(content)
+    File("README.md").writeText(content + "\n" + after)
 }
