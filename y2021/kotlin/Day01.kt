@@ -2,10 +2,6 @@ package y2021
 
 import general.Day
 
-fun main() {
-    Day01.a2()
-}
-
 object Day01 : Day() {
     override val name = "Sonar Sweep"
 
