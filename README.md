@@ -3,7 +3,8 @@
 ### Possible Timings
 | Day | | a1 | a2 | a1+a2 |
 | ---: | :--- | ---: | ---: | ---: |
-| 1 | Sonar Sweep | 2.1 ms | 1.2 ms | 3.3 ms |
+| 1 | Sonar Sweep | 2.9 ms | 1.7 ms | 4.7 ms |
+| 2 | Dive! | 3.8 ms | 2.2 ms | 5.9 ms |
 
 ## [Advent of Code 2020](https://adventofcode.com/2020/)
 
