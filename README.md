@@ -3,8 +3,9 @@
 ### Possible Timings
 | Day | | a1 | a2 | a1+a2 |
 | ---: | :--- | ---: | ---: | ---: |
-| 1 | Sonar Sweep | 2.9 ms | 1.7 ms | 4.7 ms |
-| 2 | Dive! | 3.8 ms | 2.2 ms | 5.9 ms |
+| 1 | Sonar Sweep | 2.1 ms | 1.3 ms | 3.4 ms |
+| 2 | Dive! | 1.8 ms | 1.0 ms | 2.8 ms |
+| 3 | Binary Diagnostic | 1.5 ms | 2.1 ms | 3.6 ms |
 
 ## [Advent of Code 2020](https://adventofcode.com/2020/)
 

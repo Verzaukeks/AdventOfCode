@@ -5,7 +5,7 @@ import java.io.File
 
 fun main(args: Array<String>) {
     val y2021 = arrayOf(
-        Day01, Day02)
+        Day01, Day02, Day03)
 
     recordTimes(y2021)
 }
@@ -24,6 +24,10 @@ private fun recordTimes(days: Array<Day>) {
     content += delimiter + "\n"
     content += "| Day | | a1 | a2 | a1+a2 |\n"
     content += "| ---: | :--- | ---: | ---: | ---: |\n"
+
+//    System.setOut(PrintStream(object : OutputStream() {
+//        override fun write(b: Int) {}
+//    }))
 
     days.forEach { day ->
         println()
