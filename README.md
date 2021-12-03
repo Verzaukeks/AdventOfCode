@@ -3,9 +3,9 @@
 ### Possible Timings
 | Day | | a1 | a2 | a1+a2 |
 | ---: | :--- | ---: | ---: | ---: |
-| 1 | Sonar Sweep | 2.1 ms | 1.3 ms | 3.4 ms |
-| 2 | Dive! | 1.8 ms | 1.0 ms | 2.8 ms |
-| 3 | Binary Diagnostic | 1.5 ms | 2.1 ms | 3.6 ms |
+| 1 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | [1.8 ms](y2021/kotlin/Day01.kt#L8) | [1.4 ms](y2021/kotlin/Day01.kt#L19) | [3.2 ms](y2021/kotlin/Day01.kt) |
+| 2 | [Dive!](https://adventofcode.com/2021/day/2) | [1.7 ms](y2021/kotlin/Day02.kt#L8) | [1.6 ms](y2021/kotlin/Day02.kt#L26) | [3.3 ms](y2021/kotlin/Day02.kt) |
+| 3 | [Binary Diagnostic](https://adventofcode.com/2021/day/3) | [2.6 ms](y2021/kotlin/Day03.kt#L9) | [2.4 ms](y2021/kotlin/Day03.kt#L29) | [5.0 ms](y2021/kotlin/Day03.kt) |
 
 ## [Advent of Code 2020](https://adventofcode.com/2020/)
 

@@ -2,6 +2,8 @@ package general
 
 import y2021.*
 import java.io.File
+import java.io.OutputStream
+import java.io.PrintStream
 
 fun main(args: Array<String>) {
     val y2021 = arrayOf(
@@ -25,9 +27,9 @@ private fun recordTimes(days: Array<Day>) {
     content += "| Day | | a1 | a2 | a1+a2 |\n"
     content += "| ---: | :--- | ---: | ---: | ---: |\n"
 
-//    System.setOut(PrintStream(object : OutputStream() {
-//        override fun write(b: Int) {}
-//    }))
+    System.setOut(PrintStream(object : OutputStream() {
+        override fun write(b: Int) {}
+    }))
 
     days.forEach { day ->
         println()
@@ -41,9 +43,29 @@ private fun recordTimes(days: Array<Day>) {
         val a2 = trim(timings[1] / 3)
         val a12 = trim((timings[0] + timings[1]) / 3)
 
-        if (day.day == 25) content += "| ${day.day} | ${day.name} | $a1 ms | / ms | $a12 ms |\n"
-        else content += "| ${day.day} | ${day.name} | $a1 ms | $a2 ms | $a12 ms |\n"
+        val name = "[${day.name}](https://adventofcode.com/${day.year}/day/${day.day})"
+        val link = "y${day.year}/kotlin/${day.javaClass.simpleName}.kt"
+        val (f1, f2) = find(day)
+
+        val link1 = "[$a1 ms]($link#L$f1)"
+        val link2 = "[$a2 ms]($link#L$f2)"
+        val link12 = "[$a12 ms]($link)"
+
+        content += "| ${day.day} | $name | $link1 | $link2 | $link12 |\n"
     }
 
     File("README.md").writeText(content + "\n" + after)
+}
+
+private fun find(day: Day): Pair<Int, Int> {
+    val file = File("y${day.year}/kotlin/${day.javaClass.simpleName}.kt")
+    val content = file.readText()
+
+    val f1 = content.indexOf("fun a1")
+    val f2 = content.indexOf("fun a2")
+
+    return Pair(
+        content.substring(0, f1).count { it == '\n' } + 1,
+        content.substring(0, f2).count { it == '\n' } + 1,
+    )
 }
