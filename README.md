@@ -3,11 +3,10 @@
 ### Possible Timings
 | Day | | a1 | a2 | a1+a2 |
 | ---: | :--- | ---: | ---: | ---: |
-| 1 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | [1.8 ms](y2021/kotlin/Day01.kt#L8) | [1.4 ms](y2021/kotlin/Day01.kt#L19) | [3.2 ms](y2021/kotlin/Day01.kt) |
-| 2 | [Dive!](https://adventofcode.com/2021/day/2) | [1.7 ms](y2021/kotlin/Day02.kt#L8) | [1.6 ms](y2021/kotlin/Day02.kt#L26) | [3.3 ms](y2021/kotlin/Day02.kt) |
-| 3 | [Binary Diagnostic](https://adventofcode.com/2021/day/3) | [2.6 ms](y2021/kotlin/Day03.kt#L9) | [2.4 ms](y2021/kotlin/Day03.kt#L29) | [5.0 ms](y2021/kotlin/Day03.kt) |
-
-## [Advent of Code 2020](https://adventofcode.com/2020/)
+| 1 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | [2.8 ms](y2021/kotlin/Day01.kt#L8) | [2.3 ms](y2021/kotlin/Day01.kt#L19) | [5.0 ms](y2021/kotlin/Day01.kt) |
+| 2 | [Dive!](https://adventofcode.com/2021/day/2) | [3.1 ms](y2021/kotlin/Day02.kt#L8) | [1.5 ms](y2021/kotlin/Day02.kt#L26) | [4.6 ms](y2021/kotlin/Day02.kt) |
+| 3 | [Binary Diagnostic](https://adventofcode.com/2021/day/3) | [1.9 ms](y2021/kotlin/Day03.kt#L9) | [5.7 ms](y2021/kotlin/Day03.kt#L29) | [7.6 ms](y2021/kotlin/Day03.kt) |
+| 4 | [Giant Squid](https://adventofcode.com/2021/day/4) | [6.7 ms](y2021/kotlin/Day04.kt#L91) | [8.4 ms](y2021/kotlin/Day04.kt#L107) | [15.0 ms](y2021/kotlin/Day04.kt) |
 
 ### Possible Timings
 | Day | | a1 | a2 | a1+a2 |

@@ -7,7 +7,7 @@ import java.io.PrintStream
 
 fun main(args: Array<String>) {
     val y2021 = arrayOf(
-        Day01, Day02, Day03)
+        Day01, Day02, Day03, Day04)
 
     recordTimes(y2021)
 }
@@ -21,7 +21,13 @@ private fun recordTimes(days: Array<Day>) {
 
     val delimiter = "### Possible Timings"
     var content = File("README.md").readText()
-    val after = content.substringAfter(delimiter).substringAfter("\n\n")
+
+    var after = content.substringAfter(delimiter)
+    val i1 = after.indexOf("\n\n")
+    val i2 = after.indexOf("\n\r\n")
+    if (i1 != -1) after = after.substring(i1 + 2)
+    else if (i2 != -1) after = after.substring(i2 + 3)
+
     content = content.substringBefore(delimiter)
     content += delimiter + "\n"
     content += "| Day | | a1 | a2 | a1+a2 |\n"
