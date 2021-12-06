@@ -7,7 +7,8 @@ import java.io.PrintStream
 
 fun main(args: Array<String>) {
     val y2021 = arrayOf(
-        Day01, Day02, Day03, Day04, Day05)
+        Day01, Day02, Day03, Day04, Day05,
+        Day06)
 
     recordTimes(y2021)
 }
