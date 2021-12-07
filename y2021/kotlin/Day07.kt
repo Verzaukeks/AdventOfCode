@@ -21,7 +21,8 @@ object Day07 : Day() {
             current = input.count { it == pos }
             right -= current
 
-            if (left + 1 >= right) break
+             //meh: if (left + 1 >= right) break
+            if (left > right) { pos -= 1 ; break }
         }
 
         val fuel = input.sumOf { abs(it - pos) }
