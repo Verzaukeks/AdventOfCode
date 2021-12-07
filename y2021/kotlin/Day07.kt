@@ -8,19 +8,39 @@ object Day07 : Day() {
 
     override fun a1() {
         val input = INPUT.readText().split(",").map { it.toInt() }
-        var fuel = Integer.MAX_VALUE
-        var prev = Integer.MAX_VALUE
 
-        var pos = 0
+        var pos = -1
+        var left = 0
+        var current = 0
+        var right = input.size
+
         while (true) {
-            val distance = input.sumOf { abs(it - pos) }
-            if (distance < fuel) fuel = distance
-            if (distance > prev) break
             pos += 1
-            prev = distance
+
+            left += current
+            current = input.count { it == pos }
+            right -= current
+
+            if (left + 1 >= right) break
         }
 
+        val fuel = input.sumOf { abs(it - pos) }
         println(fuel)
+
+//        val input = INPUT.readText().split(",").map { it.toInt() }
+//        var fuel = Integer.MAX_VALUE
+//        var prev = Integer.MAX_VALUE
+//
+//        var pos = 0
+//        while (true) {
+//            val distance = input.sumOf { abs(it - pos) }
+//            if (distance < fuel) fuel = distance
+//            if (distance > prev) break
+//            pos += 1
+//            prev = distance
+//        }
+//
+//        println(fuel)
     }
 
     override fun a2() {
