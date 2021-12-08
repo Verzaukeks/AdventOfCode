@@ -43,7 +43,7 @@ object Day08 : Day() {
              map1[g=6] 0b1111111
 
              map2[0] = List of all values with length = 5 (possible numbers are 2,3,5)
-             map2[1] = List of all values with length = 6 (possible numbers are 6,9)
+             map2[1] = List of all values with length = 6 (possible numbers are 0,6,9)
          */
 
         for (line in input) {
@@ -94,7 +94,8 @@ object Day08 : Day() {
                 map2[0] += value
             }
             6 -> { /* 0b1111111 */
-                map2[1] += value}
+                map2[1] += value
+            }
             7 -> { /* 0b1111111 */ }
             else -> error(value)
         }
@@ -105,13 +106,13 @@ object Day08 : Day() {
      * => all digits have 3 common segments (a, d, g)
      * => all segments who are in each value can either be a, d or g
      *
-     * all values with length of 6 have to be either a 6 or 9
-     * => all digits have 5 common segments (a, c, d, f, g)
-     * => all segments who are in each value can either be a, c, d, f or g
+     * all values with length of 6 have to be either a 0,6 or 9
+     * => all digits have 4 common segments (a, c, d, f)
+     * => all segments who are in each value can either be a, c, d or f
      */
     private fun reduce2(map1: IntArray, map2: Array<ArrayList<String>>) {
         // 0 -> 2,3,5 -> abcdefg => a__d__g
-        // 1 -> 6,9 -> abcdefg => a_cd_fg
+        // 1 -> 0,6,9 -> abcdefg => a_cd_f_
 
         var l5 = "abcdefg"
         var l6 = "abcdefg"
@@ -131,7 +132,7 @@ object Day08 : Day() {
 
         for (c in 0..6) {
             if (c in l5c) map1[c] = map1[c] and 0b1001001
-            if (c in l6c) map1[c] = map1[c] and 0b1011011
+            if (c in l6c) map1[c] = map1[c] and 0b1011010
         }
     }
 
