@@ -44,12 +44,7 @@ private fun recordTimes(days: Array<Day>) {
 
         val timings = LongArray(2)
         day.a1() ; repeat(3) { timings[0] += time(day::a1) }
-
-        // I do not want to wait every time
-        if (day.day == 12) timings[1] += 3 * 30545600000L
-        else {
-            day.a2() ; repeat(3) { timings[1] += time(day::a2) }
-        }
+        day.a2() ; repeat(3) { timings[1] += time(day::a2) }
 
         val a1 = trim(timings[0] / 3)
         val a2 = trim(timings[1] / 3)

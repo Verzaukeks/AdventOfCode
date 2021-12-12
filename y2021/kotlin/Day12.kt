@@ -10,6 +10,8 @@ object Day12 : Day() {
     override fun a1() = a(false)
     override fun a2() = a(true)
 
+    class Data(val edges: Array<ArrayList<Int>>, val startIndex: Int, val endIndex: Int)
+
     class Path(val free: Boolean, val nodes: IntArray) {
         fun walk(free: Boolean, node: Int): Path {
             val nodes = this.nodes.copyOf(this.nodes.size + 1)
@@ -18,12 +20,11 @@ object Day12 : Day() {
         }
     }
 
-    // Not in the mood to improve things as of now
     private fun a(defaultFree: Boolean) {
         var indexSmall = 0
         var indexBig = 25
         val indexMap = TreeMap<String, Int>()
-        val edges = Array(50) { BooleanArray(50) }
+        val edges = Array(50) { ArrayList<Int>() }
 
         for (line in INPUT.readLines()) {
             val (from, to) = line.split("-")
@@ -39,49 +40,39 @@ object Day12 : Day() {
                 indexMap[to] = toIndex
             }
 
-            edges[fromIndex][toIndex] = true
-            edges[toIndex][fromIndex] = true
+            edges[fromIndex] += toIndex
+            edges[toIndex] += fromIndex
         }
 
         val startIndex = indexMap["start"]!!
         val endIndex = indexMap["end"]!!
+        val data = Data(edges, startIndex, endIndex)
+        val path = Path(defaultFree, IntArray(1) { startIndex })
 
-        val paths = LinkedList<Path>()
-        val finished = ArrayList<Path>()
+        val paths = getPathsAmount(data, path)
+        println(paths)
+    }
 
-        paths += Path(defaultFree, IntArray(1) { startIndex })
+    private fun getPathsAmount(data: Data, path: Path): Int {
+        val lastIndex = path.nodes.last()
+        if (lastIndex == data.endIndex) return 1
 
-        while (paths.isNotEmpty()) {
-            for (i in 1..paths.size) {
-                val path = paths.removeFirst()
-                val lastIndex = path.nodes.last()
+        var amount = 0
 
-                if (lastIndex == endIndex) {
-                    finished += path
-                    continue
+        for (node in data.edges[lastIndex]) {
+            if (node == data.startIndex) continue
+
+            var free = path.free
+            if (node < 25)
+                if (node in path.nodes) {
+                    if (!free) continue
+                    free = false
                 }
 
-                val conns = edges[lastIndex]
-                for (node in conns.indices) {
-                    if (!conns[node]) continue
-                    if (node == startIndex) continue
-
-                    var free = path.free
-                    if (node < 25)
-                        if (node in path.nodes) {
-                            if (!free) continue
-                            free = false
-                        }
-
-                    val pathNew = path.walk(free, node)
-                    if (pathNew !in paths)
-                        paths += pathNew
-                }
-            }
-
-//            println("${paths.size} // ${finished.size}")
+            val pathNew = path.walk(free, node)
+            amount += getPathsAmount(data, pathNew)
         }
 
-        println(finished.size)
+        return amount
     }
 }
