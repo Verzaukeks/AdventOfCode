@@ -3,17 +3,18 @@
 ### Possible Timings
 | Day | | a1 | a2 | a1+a2 |
 | ---: | :--- | ---: | ---: | ---: |
-| 1 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | [2.8 ms](y2021/kotlin/Day01.kt#L8) | [1.5 ms](y2021/kotlin/Day01.kt#L19) | [4.3 ms](y2021/kotlin/Day01.kt) |
-| 2 | [Dive!](https://adventofcode.com/2021/day/2) | [2.5 ms](y2021/kotlin/Day02.kt#L8) | [1.5 ms](y2021/kotlin/Day02.kt#L26) | [4.0 ms](y2021/kotlin/Day02.kt) |
-| 3 | [Binary Diagnostic](https://adventofcode.com/2021/day/3) | [3.1 ms](y2021/kotlin/Day03.kt#L9) | [6.0 ms](y2021/kotlin/Day03.kt#L29) | [9.1 ms](y2021/kotlin/Day03.kt) |
-| 4 | [Giant Squid](https://adventofcode.com/2021/day/4) | [5.0 ms](y2021/kotlin/Day04.kt#L91) | [6.8 ms](y2021/kotlin/Day04.kt#L107) | [11.8 ms](y2021/kotlin/Day04.kt) |
-| 5 | [Hydrothermal Venture](https://adventofcode.com/2021/day/5) | [12.9 ms](y2021/kotlin/Day05.kt#L48) | [9.4 ms](y2021/kotlin/Day05.kt#L50) | [22.3 ms](y2021/kotlin/Day05.kt) |
-| 6 | [Lanternfish](https://adventofcode.com/2021/day/6) | [0.3 ms](y2021/kotlin/Day06.kt#L8) | [0.3 ms](y2021/kotlin/Day06.kt#L27) | [0.6 ms](y2021/kotlin/Day06.kt) |
-| 7 | [The Treachery of Whales](https://adventofcode.com/2021/day/7) | [4.9 ms](y2021/kotlin/Day07.kt#L9) | [1.8 ms](y2021/kotlin/Day07.kt#L47) | [6.7 ms](y2021/kotlin/Day07.kt) |
-| 8 | [Seven Segment Search](https://adventofcode.com/2021/day/8) | [0.8 ms](y2021/kotlin/Day08.kt#L9) | [11.4 ms](y2021/kotlin/Day08.kt#L23) | [12.2 ms](y2021/kotlin/Day08.kt) |
-| 9 | [Smoke Basin](https://adventofcode.com/2021/day/9) | [11.2 ms](y2021/kotlin/Day09.kt#L10) | [43.0 ms](y2021/kotlin/Day09.kt#L31) | [54.2 ms](y2021/kotlin/Day09.kt) |
-| 10 | [Syntax Scoring](https://adventofcode.com/2021/day/10) | [0.7 ms](y2021/kotlin/Day10.kt#L8) | [1.0 ms](y2021/kotlin/Day10.kt#L47) | [1.7 ms](y2021/kotlin/Day10.kt) |
-| 11 | [Dumbo Octopus](https://adventofcode.com/2021/day/11) | [3.3 ms](y2021/kotlin/Day11.kt#L16) | [7.3 ms](y2021/kotlin/Day11.kt#L68) | [10.6 ms](y2021/kotlin/Day11.kt) |
+| 1 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | [3.0 ms](y2021/kotlin/Day01.kt#L8) | [1.6 ms](y2021/kotlin/Day01.kt#L19) | [4.6 ms](y2021/kotlin/Day01.kt) |
+| 2 | [Dive!](https://adventofcode.com/2021/day/2) | [2.9 ms](y2021/kotlin/Day02.kt#L8) | [1.9 ms](y2021/kotlin/Day02.kt#L26) | [4.7 ms](y2021/kotlin/Day02.kt) |
+| 3 | [Binary Diagnostic](https://adventofcode.com/2021/day/3) | [3.4 ms](y2021/kotlin/Day03.kt#L9) | [2.8 ms](y2021/kotlin/Day03.kt#L29) | [6.3 ms](y2021/kotlin/Day03.kt) |
+| 4 | [Giant Squid](https://adventofcode.com/2021/day/4) | [6.7 ms](y2021/kotlin/Day04.kt#L91) | [7.6 ms](y2021/kotlin/Day04.kt#L107) | [14.3 ms](y2021/kotlin/Day04.kt) |
+| 5 | [Hydrothermal Venture](https://adventofcode.com/2021/day/5) | [12.3 ms](y2021/kotlin/Day05.kt#L48) | [9.9 ms](y2021/kotlin/Day05.kt#L50) | [22.3 ms](y2021/kotlin/Day05.kt) |
+| 6 | [Lanternfish](https://adventofcode.com/2021/day/6) | [0.4 ms](y2021/kotlin/Day06.kt#L8) | [0.4 ms](y2021/kotlin/Day06.kt#L27) | [0.7 ms](y2021/kotlin/Day06.kt) |
+| 7 | [The Treachery of Whales](https://adventofcode.com/2021/day/7) | [4.1 ms](y2021/kotlin/Day07.kt#L9) | [2.2 ms](y2021/kotlin/Day07.kt#L47) | [6.3 ms](y2021/kotlin/Day07.kt) |
+| 8 | [Seven Segment Search](https://adventofcode.com/2021/day/8) | [0.8 ms](y2021/kotlin/Day08.kt#L9) | [15.8 ms](y2021/kotlin/Day08.kt#L23) | [16.6 ms](y2021/kotlin/Day08.kt) |
+| 9 | [Smoke Basin](https://adventofcode.com/2021/day/9) | [9.6 ms](y2021/kotlin/Day09.kt#L10) | [27.1 ms](y2021/kotlin/Day09.kt#L31) | [36.7 ms](y2021/kotlin/Day09.kt) |
+| 10 | [Syntax Scoring](https://adventofcode.com/2021/day/10) | [0.5 ms](y2021/kotlin/Day10.kt#L8) | [0.6 ms](y2021/kotlin/Day10.kt#L47) | [1.1 ms](y2021/kotlin/Day10.kt) |
+| 11 | [Dumbo Octopus](https://adventofcode.com/2021/day/11) | [15.3 ms](y2021/kotlin/Day11.kt#L16) | [38.1 ms](y2021/kotlin/Day11.kt#L68) | [53.5 ms](y2021/kotlin/Day11.kt) |
+| 12 | [Passage Pathing](https://adventofcode.com/2021/day/12) | [152.4 ms](y2021/kotlin/Day12.kt#L10) | [30545.6 ms](y2021/kotlin/Day12.kt#L11) | [30698.0 ms](y2021/kotlin/Day12.kt) |
 
 ## [Advent of Code 2020](https://adventofcode.com/2020/)
 

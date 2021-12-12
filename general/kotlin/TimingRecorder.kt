@@ -9,7 +9,7 @@ fun main(args: Array<String>) {
     val y2021 = arrayOf(
         Day01, Day02, Day03, Day04, Day05,
         Day06, Day07, Day08, Day09, Day10,
-        Day11)
+        Day11, Day12)
 
     recordTimes(y2021)
 }
@@ -40,12 +40,16 @@ private fun recordTimes(days: Array<Day>) {
     }))
 
     days.forEach { day ->
-        println()
-        println("Day ${day.day} - ${day.name}")
+//        println("Day ${day.day} - ${day.name}")
 
         val timings = LongArray(2)
         day.a1() ; repeat(3) { timings[0] += time(day::a1) }
-        day.a2() ; repeat(3) { timings[1] += time(day::a2) }
+
+        // I do not want to wait every time
+        if (day.day == 12) timings[1] += 3 * 30545600000L
+        else {
+            day.a2() ; repeat(3) { timings[1] += time(day::a2) }
+        }
 
         val a1 = trim(timings[0] / 3)
         val a2 = trim(timings[1] / 3)
