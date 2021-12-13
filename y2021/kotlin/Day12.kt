@@ -21,9 +21,22 @@ object Day12 : Day() {
     }
 
     private fun a(defaultFree: Boolean) {
+        val (edges, indexMap) = readEdges()
+
+        val startIndex = indexMap["start"]!!
+        val endIndex = indexMap["end"]!!
+        val data = Data(edges, startIndex, endIndex)
+        val path = Path(defaultFree, IntArray(1) { startIndex })
+
+        val paths = getPathsAmount(data, path)
+        println(paths)
+    }
+
+    private fun readEdges(): Pair<Array<ArrayList<Int>>, TreeMap<String, Int>> {
         var indexSmall = 0
         var indexBig = 25
         val indexMap = TreeMap<String, Int>()
+
         val edges = Array(50) { ArrayList<Int>() }
 
         for (line in INPUT.readLines()) {
@@ -44,13 +57,7 @@ object Day12 : Day() {
             edges[toIndex] += fromIndex
         }
 
-        val startIndex = indexMap["start"]!!
-        val endIndex = indexMap["end"]!!
-        val data = Data(edges, startIndex, endIndex)
-        val path = Path(defaultFree, IntArray(1) { startIndex })
-
-        val paths = getPathsAmount(data, path)
-        println(paths)
+        return Pair(edges, indexMap)
     }
 
     private fun getPathsAmount(data: Data, path: Path): Int {

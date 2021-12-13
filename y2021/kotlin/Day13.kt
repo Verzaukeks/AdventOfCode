@@ -18,34 +18,13 @@ object Day13 : Day() {
         for (line in INPUT.readLines()) {
             if (dotting) {
 
-                if (line.isEmpty()) {
-                    dotting = false
-                    continue
-                }
-
-                val (x, y) = line.split(",")
-                dots += Dot(x.toInt(), y.toInt())
+                if (line.isEmpty()) dotting = false
+                else addDot(dots, line)
 
                 continue
             }
-            else if ('x' in line) {
-
-                val xSplit = line.substringAfter("=").toInt()
-
-                for (dot in dots) {
-                    if (dot.x > xSplit) dot.x = xSplit - (dot.x - xSplit)
-                    if (dot !in folded) folded += dot
-                }
-            }
-            else if ('y' in line) {
-
-                val ySplit = line.substringAfter("=").toInt()
-
-                for (dot in dots) {
-                    if (dot.y > ySplit) dot.y = ySplit - (dot.y - ySplit)
-                    if (dot !in folded) folded += dot
-                }
-            }
+            else if ('x' in line) xSplit(dots, folded, line)
+            else if ('y' in line) ySplit(dots, folded, line)
 
             dots = folded.also { folded = dots }
             folded.clear()
@@ -54,6 +33,29 @@ object Day13 : Day() {
         }
 
         return dots
+    }
+
+    private fun addDot(dots: ArrayList<Dot>, line: String) {
+        val (x, y) = line.split(",")
+        dots += Dot(x.toInt(), y.toInt())
+    }
+
+    private fun xSplit(dots: ArrayList<Dot>, folded: ArrayList<Dot>, line: String) {
+        val xSplit = line.substringAfter("=").toInt()
+
+        for (dot in dots) {
+            if (dot.x > xSplit) dot.x = xSplit - (dot.x - xSplit)
+            if (dot !in folded) folded += dot
+        }
+    }
+
+    private fun ySplit(dots: ArrayList<Dot>, folded: ArrayList<Dot>, line: String) {
+        val ySplit = line.substringAfter("=").toInt()
+
+        for (dot in dots) {
+            if (dot.y > ySplit) dot.y = ySplit - (dot.y - ySplit)
+            if (dot !in folded) folded += dot
+        }
     }
 
     private fun printDots(dots: List<Dot>) {

@@ -60,7 +60,10 @@ object Day05 : Day() {
         val count = pixels.count { it > 1 }
         println(count)
 
+//        createImage(pixels, width, height)
+    }
 
+//    private fun createImage(pixels: IntArray, width: Int, height: Int) {
 //        val img = BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
 //        val data = (img.raster.dataBuffer as DataBufferInt).data
 //
@@ -72,5 +75,5 @@ object Day05 : Day() {
 //            }
 //
 //        ImageIO.write(img, "PNG", File("img.png"))
-    }
+//    }
 }

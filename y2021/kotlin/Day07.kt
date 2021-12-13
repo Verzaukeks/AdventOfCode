@@ -7,41 +7,14 @@ object Day07 : Day() {
     override val name = "The Treachery of Whales"
 
     override fun a1() {
-        val input = INPUT.readText().split(",").map { it.toInt() }
+        val input = INPUT.readText()
+            .split(",")
+            .map { it.toInt() }
+            .sorted()
 
-        var pos = -1
-        var left = 0
-        var current = 0
-        var right = input.size
-
-        while (true) {
-            pos += 1
-
-            left += current
-            current = input.count { it == pos }
-            right -= current
-
-             //meh: if (left + 1 >= right) break
-            if (left > right) { pos -= 1 ; break }
-        }
-
-        val fuel = input.sumOf { abs(it - pos) }
+        val median = input[input.size / 2]
+        val fuel = input.sumOf { abs(it - median) }
         println(fuel)
-
-//        val input = INPUT.readText().split(",").map { it.toInt() }
-//        var fuel = Integer.MAX_VALUE
-//        var prev = Integer.MAX_VALUE
-//
-//        var pos = 0
-//        while (true) {
-//            val distance = input.sumOf { abs(it - pos) }
-//            if (distance < fuel) fuel = distance
-//            if (distance > prev) break
-//            pos += 1
-//            prev = distance
-//        }
-//
-//        println(fuel)
     }
 
     override fun a2() {
@@ -49,7 +22,7 @@ object Day07 : Day() {
         var fuel = Integer.MAX_VALUE
         var prev = Integer.MAX_VALUE
 
-        var pos = input.sum() / input.size // approx guess, near correct position?
+        var pos = input.sum() / input.size // approx guess, near correct position
         var direction = 1
 
         while (true) {
