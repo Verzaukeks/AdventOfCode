@@ -6,49 +6,10 @@ import java.util.*
 object Day14 : Day() {
     override val name = "Extended Polymerization"
 
-    override fun a1() {
-        val input = INPUT.readLines()
+    override fun a1() = a(10)
+    override fun a2() = a(40)
 
-        var chainIndex: Int
-        var chain = input[0]
-
-        val map = TreeMap<String, String>()
-        for (i in 2 until input.size) {
-            val (from, to) = input[i].split(" -> ")
-            map[from] = to
-        }
-
-        repeat(10) {
-            chainIndex = 0
-
-            while (chainIndex < chain.length - 1) {
-                val subset = chain.substring(chainIndex, chainIndex + 2)
-                val insert = map[subset]
-
-                if (insert == null) {
-                    chainIndex += 1
-                    continue
-                }
-
-                chain = chain.substring(0, chainIndex + 1) +
-                        insert +
-                        chain.substring(chainIndex + 1)
-
-                chainIndex += 2
-            }
-        }
-
-        val count = IntArray('Z' - 'A' + 1)
-        for (char in chain)
-            count[char - 'A'] += 1
-
-        val max = count.maxOrNull()!!
-        val min = count.minOfOrNull { if (it == 0) Int.MAX_VALUE else it }!!
-
-        println(max - min)
-    }
-
-    override fun a2() {
+    private fun a(steps: Int) {
         val input = INPUT.readLines()
 
         var contains = TreeMap<String, Long>()
@@ -68,7 +29,7 @@ object Day14 : Day() {
             contains[subset] = (contains[subset] ?: 0) + 1
         }
 
-        repeat(40) {
+        repeat(steps) {
 
             for ((from, to) in creates) {
                 val (to0, to1) = to
