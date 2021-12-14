@@ -50,11 +50,17 @@ object Day14 : Day() {
             count[combi[1] - 'A'] += amount
         }
 
+        // help the two letters, which are only counted once
+        // (first char in chain has no partner to the left )
+        // ( last char in chain has no partner to the right)
+        count[chain.first() - 'A'] += 1L
+        count[chain.last()  - 'A'] += 1L
+
         val max = count.maxOrNull()!!
         val min = count.minOfOrNull { if (it == 0L) Long.MAX_VALUE else it }!!
 
         // compensate double counting the every char
-        val result = (max - min + 1) / 2
+        val result = (max - min) / 2
 
         println(result)
     }
