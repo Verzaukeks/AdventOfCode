@@ -59,7 +59,7 @@ object Day14 : Day() {
         val max = count.maxOrNull()!!
         val min = count.minOfOrNull { if (it == 0L) Long.MAX_VALUE else it }!!
 
-        // compensate double counting the every char
+        // compensate double counting every char
         val result = (max - min) / 2
 
         println(result)
