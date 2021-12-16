@@ -5,3 +5,10 @@ operator fun String.times(times: Int): String {
     repeat(times) { string.append(this) }
     return string.toString()
 }
+
+fun Iterable<Long>.product(): Long {
+    var product = 1L
+    for (element in this)
+        product *= element
+    return product
+}
