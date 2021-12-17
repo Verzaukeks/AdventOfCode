@@ -39,7 +39,7 @@ object Day17 : Day() {
 
     private fun calcStep(v: Int, y: Int): Double {
         // y = steps * velocity - 0.5 * steps * (steps - 1)
-        // => steps = velocity + 0.5 + sqrt(velocity^2 + velocity - 0.25 - 2y)
+        // => steps = velocity + 0.5 + sqrt(velocity^2 + velocity + 0.25 - 2y)
         val temp = v * v + v + 0.25 - 2 * y
         if (temp < 0) return -1.0
         return v + 0.5 + sqrt(temp)
