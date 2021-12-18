@@ -12,3 +12,12 @@ fun Iterable<Long>.product(): Long {
         product *= element
     return product
 }
+
+fun CharSequence.indexOf(startIndex: Int, vararg chars: Char): Int {
+
+    for (index in startIndex until length)
+        if (get(index) in chars)
+            return index
+
+    return -1
+}
