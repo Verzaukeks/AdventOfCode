@@ -90,6 +90,5 @@ object Day21 : Day() {
         }
 
         println(roll(player1, 0, player2, 0).max())
-        println("630797200227453")
     }
 }
