@@ -121,7 +121,7 @@ object Day22 : Day() {
         }
 
         // handle steps
-        val currentCubesOn = ArrayList<Cube>(200_00)
+        val currentCubesOn = ArrayList<Cube>()
 
         for (cube in steps) {
             if (cube.state) add(currentCubesOn, cube)

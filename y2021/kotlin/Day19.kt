@@ -10,15 +10,10 @@ object Day19 : Day() {
     enum class Axis { Y_AXIS, Z_AXIS, DOUBLE_Z_AXIS }
     data class Position(var x: Int, var y: Int, var z: Int)
 
-    class Scanner(val beacons: MutableList<Position>, addOrientationPoints: Boolean) {
+    class Scanner(val beacons: MutableList<Position>) {
         val pos = Position(0, 0, 0)
-
-        init {
-            if (addOrientationPoints) {
-                beacons += Position(ORIENTATION_DISTANCE, ORIENTATION_DISTANCE, ORIENTATION_DISTANCE)
-                beacons += Position(-ORIENTATION_DISTANCE, -ORIENTATION_DISTANCE, -ORIENTATION_DISTANCE)
-            }
-        }
+        val ori1 = Position(ORIENTATION_DISTANCE, ORIENTATION_DISTANCE, ORIENTATION_DISTANCE)
+        val ori2 = Position(-ORIENTATION_DISTANCE, -ORIENTATION_DISTANCE, -ORIENTATION_DISTANCE)
 
         fun move(mx: Int, my: Int, mz: Int) {
             for (beacon in beacons) {
@@ -26,10 +21,18 @@ object Day19 : Day() {
                 beacon.y += my
                 beacon.z += mz
             }
+
+            ori1.x += mx
+            ori1.y += my
+            ori1.z += mz
+
+            ori2.x += mx
+            ori2.y += my
+            ori2.z += mz
         }
     }
 
-    private fun readScanners(addOrientationPoints: Boolean) = INPUT.readText()
+    private fun readScanners() = INPUT.readText()
         .replace("--- scanner [0-9]+ ---\r?\n".toRegex(), "")
         .split("\r?\n\r?\n".toRegex())
         .map {
@@ -42,28 +45,25 @@ object Day19 : Day() {
                             Position(it[0], it[1], it[2])
                         }
                 }
-                .toMutableList(), addOrientationPoints)
+                .toMutableList())
         }
 
     override fun a1() {
-        println(calculate(false).first.size)
+        println(calculate().first.size)
     }
 
     override fun a2() {
-        val scanners = calculate(true).second
+        val scanners = calculate().second
         var max = 0
 
         for (sc in scanners) {
-            val ori1 = sc.beacons[sc.beacons.size - 1]
-            val ori2 = sc.beacons[sc.beacons.size - 2]
+            val dx = (sc.ori2.x - sc.ori1.x) / 2
+            val dy = (sc.ori2.y - sc.ori1.y) / 2
+            val dz = (sc.ori2.z - sc.ori1.z) / 2
 
-            val dx = (ori2.x - ori1.x) / 2
-            val dy = (ori2.y - ori1.y) / 2
-            val dz = (ori2.z - ori1.z) / 2
-
-            sc.pos.x = ori1.x + dx
-            sc.pos.y = ori1.y + dy
-            sc.pos.z = ori1.z + dz
+            sc.pos.x = sc.ori1.x + dx
+            sc.pos.y = sc.ori1.y + dy
+            sc.pos.z = sc.ori1.z + dz
         }
 
         for (s1 in scanners)
@@ -82,8 +82,8 @@ object Day19 : Day() {
         println(max)
     }
 
-    private fun calculate(addOrientationPoints: Boolean): Pair<ArrayList<Position>, ArrayList<Scanner>> {
-        val scanners = readScanners(addOrientationPoints)
+    private fun calculate(): Pair<ArrayList<Position>, ArrayList<Scanner>> {
+        val scanners = readScanners()
 
         val sorted = ArrayList<Scanner>()
         val unsorted = ArrayList<Scanner>()
@@ -140,9 +140,10 @@ object Day19 : Day() {
                 val mz = b1.z - b2.z
                 s2.move(mx, my, mz)
 
-                val match = s1.beacons.count { it in s2.beacons }
-                if (match >= 12)
-                    return true
+                var match = 0
+                for (b in s1.beacons)
+                    if (b in s2.beacons && ++match >= 12)
+                        return true
             }
 
         return false
@@ -160,6 +161,13 @@ object Day19 : Day() {
                     beacon.z = -x
                 }
 
+                val (x1, y1, z1) = s.ori1
+                val (x2, y2, z2) = s.ori2
+                s.ori1.x = z1
+                s.ori1.z = -x1
+                s.ori2.x = z2
+                s.ori2.z = -x2
+
             }
             Axis.Z_AXIS -> {
 
@@ -171,6 +179,13 @@ object Day19 : Day() {
 //                    beacon.z = z
                 }
 
+                val (x1, y1, z1) = s.ori1
+                val (x2, y2, z2) = s.ori2
+                s.ori1.x = y1
+                s.ori1.y = -x1
+                s.ori2.x = y2
+                s.ori2.y = -x2
+
             }
             Axis.DOUBLE_Z_AXIS -> {
 
@@ -181,6 +196,11 @@ object Day19 : Day() {
                     beacon.y = -y
 //                    beacon.z = z
                 }
+
+                s.ori1.x = -s.ori1.x
+                s.ori1.y = -s.ori1.y
+                s.ori2.x = -s.ori2.x
+                s.ori2.y = -s.ori2.y
 
             }
         }
