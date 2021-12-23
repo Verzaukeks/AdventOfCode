@@ -229,7 +229,7 @@ object Day23 : Day() {
                     if (hallway[h] != FREE) continue
 
                     // is travel not blocked
-                    for (ci in TRAVEL_INDICES[h][amphipod - 1])
+                    for (ci in TRAVEL_INDICES[h][s_ / 2])
                         if (hallway[ci] != FREE) continue@f
 
                     // calculate cost
