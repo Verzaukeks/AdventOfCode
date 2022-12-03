@@ -6,21 +6,16 @@ import java.io.OutputStream
 import java.io.PrintStream
 
 fun main(args: Array<String>) {
-    val y2022 = arrayOf<Day>(
-        Day01
+    val y2022 = arrayOf(
+        Day01, Day02, Day03,
     )
 
-    recordTimes(y2022)
+    createTable(y2022)
 }
 
-private fun recordTimes(days: Array<Day>) {
-    val time = { func: () -> Any ->
-        val start = System.nanoTime() ; func()
-        val stop = System.nanoTime() ; stop - start
-    }
-    val trim = { nanoTime: Long -> (nanoTime + 50000) / 100000 / 10.0 }
+private fun createTable(days: Array<Day>) {
 
-    val delimiter = "### Possible Timings"
+    val delimiter = "| Day | | a1 | a2 |"
     var content = File("README.md").readText()
 
     var after = content.substringAfter(delimiter)
@@ -31,33 +26,21 @@ private fun recordTimes(days: Array<Day>) {
 
     content = content.substringBefore(delimiter)
     content += delimiter + "\n"
-    content += "| Day | | a1 | a2 | a1+a2 |\n"
-    content += "| ---: | :--- | ---: | ---: | ---: |\n"
+    content += "| ---: | :--- | ---: | ---: |\n"
 
     System.setOut(PrintStream(object : OutputStream() {
         override fun write(b: Int) {}
     }))
 
     days.forEach { day ->
-//        println("Day ${day.day} - ${day.name}")
-
-        val timings = LongArray(2)
-        day.a1() ; repeat(3) { timings[0] += time(day::a1) }
-        day.a2() ; repeat(3) { timings[1] += time(day::a2) }
-
-        val a1 = trim(timings[0] / 3)
-        val a2 = trim(timings[1] / 3)
-        val a12 = trim((timings[0] + timings[1]) / 3)
-
         val name = "[${day.name}](https://adventofcode.com/${day.year}/day/${day.day})"
         val link = "y${day.year}/kotlin/${day.javaClass.simpleName}.kt"
         val (f1, f2) = find(day)
 
-        val link1 = "[$a1 ms]($link#L$f1)"
-        val link2 = "[${if (day.day == 25) "/" else "$a2"} ms]($link#L$f2)"
-        val link12 = "[$a12 ms]($link)"
+        val link2 = "[_jump to code_]($link#L$f2)"
+        val link1 = "[_jump to code_]($link#L$f1)"
 
-        content += "| ${day.day} | $name | $link1 | $link2 | $link12 |\n"
+        content += "| ${day.day} | $name | $link1 | $link2 |\n"
     }
 
     File("README.md").writeText(content + "\n" + after)
