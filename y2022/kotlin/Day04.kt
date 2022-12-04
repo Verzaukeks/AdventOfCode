@@ -24,10 +24,8 @@ object Day04 : Day() {
                 val split = it.split(",")
                 val ab = split[0].split("-").map { it.toInt() }
                 val cd = split[1].split("-").map { it.toInt() }
-                val x = ab[0]..ab[1]
-                val y = cd[0]..cd[1]
-                x.first in y || x.last in y ||
-                y.first in x || y.last in x
+                ab[0] <= cd[0] && cd[0] <= ab[1] ||
+                cd[0] <= ab[0] && ab[0] <= cd[1]
             })
     }
 }
