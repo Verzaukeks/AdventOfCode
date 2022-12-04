@@ -1,19 +1,22 @@
 package general
 
-import y2022.*
 import java.io.File
 import java.io.OutputStream
 import java.io.PrintStream
 
 fun main(args: Array<String>) {
-    val y2022 = arrayOf(
-        Day01, Day02, Day03,
-    )
-
+    val y2022 = ArrayList<Day>()
+    for (i in 1..25)
+        try {
+            val id = if (i < 10) "0$i" else "$i"
+            val clazz = Class.forName("y2022.Day$id")
+            val field = clazz.getDeclaredField("INSTANCE")
+            y2022 += field.get(clazz) as Day
+        } catch (e: ClassNotFoundException) { break }
     createTable(y2022)
 }
 
-private fun createTable(days: Array<Day>) {
+private fun createTable(days: List<Day>) {
 
     val delimiter = "| Day | | a1 | a2 |"
     var content = File("README.md").readText()
