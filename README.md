@@ -5,6 +5,10 @@
 | 1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | [_jump to code_](y2022/kotlin/Day01.kt#L8) | [_jump to code_](y2022/kotlin/Day01.kt#L19) |
 | 2 | [Rock Paper Scissors](https://adventofcode.com/2022/day/2) | [_jump to code_](y2022/kotlin/Day02.kt#L8) | [_jump to code_](y2022/kotlin/Day02.kt#L23) |
 | 3 | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | [_jump to code_](y2022/kotlin/Day03.kt#L8) | [_jump to code_](y2022/kotlin/Day03.kt#L23) |
+| 4 | [Camp Cleanup](https://adventofcode.com/2022/day/4) | [_jump to code_](y2022/kotlin/Day04.kt#L8) | [_jump to code_](y2022/kotlin/Day04.kt#L20) |
+| 5 | [Supply Stacks](https://adventofcode.com/2022/day/5) | [_jump to code_](y2022/kotlin/Day05.kt#L9) | [_jump to code_](y2022/kotlin/Day05.kt#L46) |
+| 6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | [_jump to code_](y2022/kotlin/Day06.kt#L8) | [_jump to code_](y2022/kotlin/Day06.kt#L26) |
+| 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | [_jump to code_](y2022/kotlin/Day07.kt#L38) | [_jump to code_](y2022/kotlin/Day07.kt#L47) |
 
 ## [Advent of Code 2021](https://adventofcode.com/2021/)
 
