@@ -14,9 +14,9 @@ object Day08 : Day() {
                 var visible = false
                 val num = map[y][x]
 
-                visible = visible || (0 until y                ).none { map[it][x] >= num }
+                visible = visible || (     0  until y          ).none { map[it][x] >= num }
                 visible = visible || ((y + 1) until map.size   ).none { map[it][x] >= num }
-                visible = visible || (0 until x                ).none { map[y][it] >= num }
+                visible = visible || (     0  until x          ).none { map[y][it] >= num }
                 visible = visible || ((x + 1) until map[y].size).none { map[y][it] >= num }
 
                 if (visible) sum++
