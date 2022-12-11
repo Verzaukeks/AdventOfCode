@@ -13,6 +13,13 @@ fun Iterable<Long>.product(): Long {
     return product
 }
 
+inline fun <T> Array<out T>.productOf(selector: (T) -> Int): Int {
+    var product = 1
+    for (element in this)
+        product *= selector(element)
+    return product
+}
+
 fun CharSequence.indexOf(startIndex: Int, vararg chars: Char): Int {
 
     for (index in startIndex until length)
