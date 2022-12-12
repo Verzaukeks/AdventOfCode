@@ -64,8 +64,6 @@ object Day11 : Day() {
 
     override fun a2() {
         val monkeys = readMonkeys()
-
-        // only possible because all test values are coprime to each other
         val mod = monkeys.productOf { it.test }
 
         repeat(10000) {
