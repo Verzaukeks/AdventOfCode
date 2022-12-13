@@ -13,8 +13,9 @@ object Day12 : Day() {
     private fun shortestPath(bigStart: Boolean = false) {
         val map = INPUT.readLines().map { it.toCharArray() }
 
-        val dist = Array(map.size) { IntArray(map[0].size) { 0x42424242 } }
+        // could also use queue (LinkedList) instead of priority-queue as all edges have the same length
         val pq = PriorityQueue(Comparator<Pos> { a, b -> a!!.d - b!!.d })
+        val dist = Array(map.size) { IntArray(map[0].size) { 0x42424242 } }
 
         f@for (y in map.indices)
             for (x in map[y].indices)
