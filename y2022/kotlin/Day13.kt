@@ -67,14 +67,18 @@ object Day13 : Day() {
     override fun a2() {
         val a = parse("[[2]]")
         val b = parse("[[6]]")
-
-        val lists = readLists().toMutableList()
-        lists.add(a)
-        lists.add(b)
-        lists.sortWith(::check)
-
-        val ai = lists.indexOf(a) + 1
-        val bi = lists.indexOf(b) + 1
+        val lists = readLists()
+        val ai = lists.count { check(it, a) < 0 } + 1
+        val bi = lists.count { check(it, b) < 0 } + 2
         println(ai * bi)
+
+//        val lists = readLists().toMutableList()
+//        lists.add(a)
+//        lists.add(b)
+//        lists.sortWith(::check)
+//
+//        val ai = lists.indexOf(a) + 1
+//        val bi = lists.indexOf(b) + 1
+//        println(ai * bi)
     }
 }
