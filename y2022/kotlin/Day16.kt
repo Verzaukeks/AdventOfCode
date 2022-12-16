@@ -12,13 +12,22 @@ object Day16 : Day() {
     private const val VALVES_WITH_FLOW_RATE = 15
     private const val VALVES_COUNT = 46
 
+    // assign to each valve an index for better iteration
     private val nameToId = TreeMap<String, Int>()
+    // MASK = set of all indices of valves with flow-rate
     private val MASK = (1 shl VALVES_WITH_FLOW_RATE) - 1
+    // easy access index for starting point valve AA
     private val AA = VALVES_WITH_FLOW_RATE // readGraph() "assures" assign to this value
 
+    // contains flow-rate for each valve
+    // (valves with flow-rate have lower indices than valves without flow-rate)
+    // (=> values without flow-rate are not stored)
     private val nodes = ArrayList<Int>()
+    // adjacency list for each node
     private val graph = Array<List<Int>>(VALVES_COUNT) { ArrayList() }
 
+    // distance[i][j] = path length from node i to node j
+    // (i has to be a valve with flow-rate or the starting point AA)
     private val distance = Array(VALVES_WITH_FLOW_RATE + 1) { IntArray(VALVES_COUNT) { 0x42424242 } }
 
     private var initialized = false
@@ -43,6 +52,8 @@ object Day16 : Day() {
             }
         }
 
+        // ensure index of AA = VALVES_WITH_FLOW_RATE for better iteration/caching
+        if (maxId != VALVES_WITH_FLOW_RATE) throw IllegalStateException("Found $maxId valves with flow-rate instead of $VALVES_WITH_FLOW_RATE")
         nameToId["AA"] = maxId++
 
         // assign indices to all other valves
@@ -72,6 +83,7 @@ object Day16 : Day() {
     }
 
     private fun calcShortestPath() {
+        // default breath-first-search implemenation for shortest distance
         fun bfs(node: Int) {
             val queue = LinkedList<Int>()
 
@@ -106,19 +118,25 @@ object Day16 : Day() {
     }
 
     private val cache = Array(VALVES_WITH_FLOW_RATE + 1) { Array(MASK + 1) { IntArray(31) { -1 } } }
+    // i = node we are currently standing in
+    // mask = set of all valves with flow-rate we have yet to open if we can
+    // time = time left before the volcano erupts
     private fun dynamicProgramming(i: Int, mask: Int, time: Int): Int {
+        // base-cases: no more valve to open, no more time left, case already computed
         if (mask == 0) return 0
         if (time <= 0) return 0
         if (cache[i][mask][time] != -1) return cache[i][mask][time]
 
+        // maximize all available options
         var res = 0
         for (j in 0 until VALVES_WITH_FLOW_RATE) {
+            // we can only open valves we previously have not opened
             val mId = 1 shl j
             if ((mask and mId) == 0) continue
 
-            val m = mask xor mId
-            val t = time - distance[i][j] - 1
-            val pressure = t * nodes[j]
+            val m = mask xor mId // remove valve-id from set
+            val t = time - distance[i][j] - 1 // time - travel time to j - time to open valve
+            val pressure = t * nodes[j] // amount of pressure released after the valve is opened
             res = max(res, dynamicProgramming(j, m, t) + pressure)
         }
 
@@ -128,12 +146,16 @@ object Day16 : Day() {
 
     override fun a1() {
         init()
+        // AA = start point
+        // MASK = set of all valves we can open
+        // 30 = time left
         println(dynamicProgramming(AA, MASK, 30))
     }
 
     override fun a2() {
         init()
         var res = 0
+        // we only have to iterate over half, because (mask <-> MASK xor mask) is symmetric
         for (mask in 0..(MASK / 2)) {
             val a = dynamicProgramming(AA, mask, 26)
             val b = dynamicProgramming(AA, MASK xor mask, 26)
