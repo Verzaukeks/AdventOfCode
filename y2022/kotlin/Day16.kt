@@ -66,7 +66,7 @@ object Day16 : Day() {
         if (DEBUG) {
             for (name in nameToId.keys) print("$name ") ; println()
             for (id in nameToId.values) print("$id ".len(3)) ; println()
-            for (id in nameToId.values) if (id < VALVES_WITH_FLOW_RATE) print("$id ".len(3)) else print("   ") ; println()
+            for (id in nameToId.values) if (id < VALVES_WITH_FLOW_RATE) print("${nodes[id]} ".len(3)) else print("   ") ; println()
             println()
         }
     }
@@ -97,9 +97,8 @@ object Day16 : Day() {
         // DEBUG
         if (DEBUG) {
             print("   ") ; for (name in nameToId.keys) print("$name ") ; println()
-            print("AA ") ; for (id in nameToId.values) print("${distance[AA][id]} ".len(3)) ; println()
             for ((name, id) in nameToId.entries) {
-                if (VALVES_WITH_FLOW_RATE <= id) continue
+                if (VALVES_WITH_FLOW_RATE < id) continue
                 print("$name ") ; for (to in nameToId.values) print("${distance[id][to]} ".len(3)) ; println()
             }
             println()
