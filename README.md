@@ -8,7 +8,16 @@
 | 4 | [Camp Cleanup](https://adventofcode.com/2022/day/4) | [_jump to code_](y2022/kotlin/Day04.kt#L8) | [_jump to code_](y2022/kotlin/Day04.kt#L20) |
 | 5 | [Supply Stacks](https://adventofcode.com/2022/day/5) | [_jump to code_](y2022/kotlin/Day05.kt#L9) | [_jump to code_](y2022/kotlin/Day05.kt#L46) |
 | 6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | [_jump to code_](y2022/kotlin/Day06.kt#L8) | [_jump to code_](y2022/kotlin/Day06.kt#L26) |
-| 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | [_jump to code_](y2022/kotlin/Day07.kt#L38) | [_jump to code_](y2022/kotlin/Day07.kt#L47) |
+| 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | [_jump to code_](y2022/kotlin/Day07.kt#L31) | [_jump to code_](y2022/kotlin/Day07.kt#L40) |
+| 8 | [Treetop Tree House](https://adventofcode.com/2022/day/8) | [_jump to code_](y2022/kotlin/Day08.kt#L8) | [_jump to code_](y2022/kotlin/Day08.kt#L29) |
+| 9 | [Rope Bridge](https://adventofcode.com/2022/day/9) | [_jump to code_](y2022/kotlin/Day09.kt#L18) | [_jump to code_](y2022/kotlin/Day09.kt#L51) |
+| 10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | [_jump to code_](y2022/kotlin/Day10.kt#L8) | [_jump to code_](y2022/kotlin/Day10.kt#L36) |
+| 11 | [Monkey in the Middle](https://adventofcode.com/2022/day/11) | [_jump to code_](y2022/kotlin/Day11.kt#L47) | [_jump to code_](y2022/kotlin/Day11.kt#L65) |
+| 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | [_jump to code_](y2022/kotlin/Day12.kt#L57) | [_jump to code_](y2022/kotlin/Day12.kt#L61) |
+| 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | [_jump to code_](y2022/kotlin/Day13.kt#L53) | [_jump to code_](y2022/kotlin/Day13.kt#L67) |
+| 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | [_jump to code_](y2022/kotlin/Day14.kt#L56) | [_jump to code_](y2022/kotlin/Day14.kt#L79) |
+| 15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | [_jump to code_](y2022/kotlin/Day15.kt#L12) | [_jump to code_](y2022/kotlin/Day15.kt#L51) |
+| 16 | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | [_jump to code_](y2022/kotlin/Day16.kt#L130) | [_jump to code_](y2022/kotlin/Day16.kt#L135) |
 
 ## [Advent of Code 2021](https://adventofcode.com/2021/)
 

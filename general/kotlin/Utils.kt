@@ -28,3 +28,9 @@ fun CharSequence.indexOf(startIndex: Int, vararg chars: Char): Int {
 
     return -1
 }
+
+fun String.len(len: Int): String {
+    if (length < len) return " " + len(len - 1)
+    if (length > len) return substring(length - len)
+    return this
+}
