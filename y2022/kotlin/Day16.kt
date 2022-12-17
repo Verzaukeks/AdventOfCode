@@ -83,7 +83,7 @@ object Day16 : Day() {
     }
 
     private fun calcShortestPath() {
-        // default breath-first-search implemenation for shortest distance
+        // default breath-first-search implementation for shortest path/distance
         fun bfs(node: Int) {
             val queue = LinkedList<Int>()
 
