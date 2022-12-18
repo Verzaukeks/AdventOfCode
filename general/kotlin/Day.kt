@@ -1,15 +1,34 @@
 package general
 
 import java.io.File
+import java.net.URL
+import java.nio.file.Files
 
 abstract class Day {
 
     abstract val name: String
     val year = javaClass.packageName.substring(1).toInt()
     val day = javaClass.simpleName.substring(3).toInt()
-    val INPUT by lazy { File("y$year/inputs/d" + (if (day < 10) "0" else "") + day) }
+    val INPUT by lazy {
+        val file = File("y$year/inputs/d" + (if (day < 10) "0" else "") + day)
+        if (!file.exists() || file.length() == 0L) downloadFile(file)
+        file
+    }
 
     abstract fun a1()
     abstract fun a2()
+
+    private fun downloadFile(file: File) {
+        val session = System.getenv("session") ?: return
+
+        val url = URL("https://adventofcode.com/$year/day/$day/input")
+        val conn = url.openConnection()
+
+        conn.addRequestProperty("Cookie", "session=$session")
+
+        conn.getInputStream().use {
+            Files.copy(it, file.toPath())
+        }
+    }
 
 }
