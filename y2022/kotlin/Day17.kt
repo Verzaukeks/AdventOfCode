@@ -103,8 +103,7 @@ object Day17 : Day() {
         // calc result
         var rounds = 1000000000000L
         var result = 0L
-
-        val patternHeight = (offset until (offset + length)).sumOf { diffs[it] }
+        val patternHeight = heights[offset + length] - heights[offset]
 
         // heights before we check for the pattern cannot be assumed to follow the pattern
         rounds -= offset - 1

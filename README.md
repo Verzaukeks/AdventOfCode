@@ -17,7 +17,9 @@
 | 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | [_jump to code_](y2022/kotlin/Day13.kt#L53) | [_jump to code_](y2022/kotlin/Day13.kt#L67) |
 | 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | [_jump to code_](y2022/kotlin/Day14.kt#L56) | [_jump to code_](y2022/kotlin/Day14.kt#L79) |
 | 15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | [_jump to code_](y2022/kotlin/Day15.kt#L12) | [_jump to code_](y2022/kotlin/Day15.kt#L51) |
-| 16 | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | [_jump to code_](y2022/kotlin/Day16.kt#L130) | [_jump to code_](y2022/kotlin/Day16.kt#L135) |
+| 16 | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | [_jump to code_](y2022/kotlin/Day16.kt#L147) | [_jump to code_](y2022/kotlin/Day16.kt#L155) |
+| 17 | [Pyroclastic Flow](https://adventofcode.com/2022/day/17) | [_jump to code_](y2022/kotlin/Day17.kt#L77) | [_jump to code_](y2022/kotlin/Day17.kt#L82) |
+| 18 | [Boiling Boulders](https://adventofcode.com/2022/day/18) | [_jump to code_](y2022/kotlin/Day18.kt#L24) | [_jump to code_](y2022/kotlin/Day18.kt#L42) |
 
 ## [Advent of Code 2021](https://adventofcode.com/2021/)
 
