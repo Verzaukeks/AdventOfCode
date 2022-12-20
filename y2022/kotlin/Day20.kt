@@ -19,7 +19,7 @@ object Day20 : Day() {
             // next 3 lines are "optional"
             inc += N
             inc %= N
-            if (inc > N * 2) inc -= N
+            if (inc > N / 2) inc -= N + 1
 
             Node(nums[it], inc.toInt())
         }
@@ -44,10 +44,11 @@ object Day20 : Day() {
             var node = n
             if (n.inc > 0) repeat( n.inc) { node = node.next }
             if (n.inc < 0) repeat(-n.inc) { node = node.prev }
+
+            // add
             n.prev = node
             n.next = node.next
 
-            // add
             n.prev.next = n
             n.next.prev = n
         }
