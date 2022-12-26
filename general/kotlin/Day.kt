@@ -27,6 +27,7 @@ abstract class Day {
         conn.addRequestProperty("Cookie", "session=$session")
 
         conn.getInputStream().use {
+            if (file.exists()) file.delete()
             Files.copy(it, file.toPath())
         }
     }

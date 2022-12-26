@@ -20,6 +20,13 @@
 | 16 | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | [_jump to code_](y2022/kotlin/Day16.kt#L147) | [_jump to code_](y2022/kotlin/Day16.kt#L155) |
 | 17 | [Pyroclastic Flow](https://adventofcode.com/2022/day/17) | [_jump to code_](y2022/kotlin/Day17.kt#L77) | [_jump to code_](y2022/kotlin/Day17.kt#L82) |
 | 18 | [Boiling Boulders](https://adventofcode.com/2022/day/18) | [_jump to code_](y2022/kotlin/Day18.kt#L24) | [_jump to code_](y2022/kotlin/Day18.kt#L42) |
+| 19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | [_jump to code_](y2022/kotlin/Day19.kt#L82) | [_jump to code_](y2022/kotlin/Day19.kt#L99) |
+| 20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | [_jump to code_](y2022/kotlin/Day20.kt#L69) | [_jump to code_](y2022/kotlin/Day20.kt#L78) |
+| 21 | [Monkey Math](https://adventofcode.com/2022/day/21) | [_jump to code_](y2022/kotlin/Day21.kt#L9) | [_jump to code_](y2022/kotlin/Day21.kt#L47) |
+| 22 | [Monkey Map](https://adventofcode.com/2022/day/22) | [_jump to code_](y2022/kotlin/Day22.kt#L17) | [_jump to code_](y2022/kotlin/Day22.kt#L81) |
+| 23 | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | [_jump to code_](y2022/kotlin/Day23.kt#L15) | [_jump to code_](y2022/kotlin/Day23.kt#L111) |
+| 24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | [_jump to code_](y2022/kotlin/Day24.kt#L99) | [_jump to code_](y2022/kotlin/Day24.kt#L100) |
+| 25 | [Full of Hot Air](https://adventofcode.com/2022/day/25) | [_jump to code_](y2022/kotlin/Day25.kt#L31) | [_jump to code_](y2022/kotlin/Day25.kt#L36) |
 
 ## [Advent of Code 2021](https://adventofcode.com/2021/)
 
