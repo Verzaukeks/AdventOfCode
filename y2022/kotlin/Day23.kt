@@ -8,20 +8,15 @@ import kotlin.math.min
 object Day23 : Day() {
     override val name = "Unstable Diffusion"
 
-    data class Elf(val x: Int, val y: Int) : Comparable<Elf> {
-        override fun compareTo(other: Elf): Int {
-            if (x == other.x) return y - other.y
-            return x - other.x
-        }
-    }
+    data class Elf(val x: Int, val y: Int)
     data class Dir(val ox: Int, val oy: Int, val rx: IntRange, val ry: IntRange)
 
     // definitely over-engineered
     override fun a1() {
         val map = Array(200) { CharArray(200) { '.' } }
         val count = Array(map.size) { IntArray(map.size) }
-        var elves = TreeSet<Elf>()
-        var elvesTo = TreeSet<Elf>()
+        var elves = ArrayList<Elf>()
+        var elvesTo = ArrayList<Elf>()
 
         INPUT.readLines().map { it.toCharArray().withIndex() }.withIndex()
             .forEach { (y, line) ->
@@ -116,8 +111,8 @@ object Day23 : Day() {
     override fun a2() {
         val map = Array(200) { CharArray(200) { '.' } }
         val count = Array(map.size) { IntArray(map.size) }
-        var elves = TreeSet<Elf>()
-        var elvesTo = TreeSet<Elf>()
+        var elves = ArrayList<Elf>()
+        var elvesTo = ArrayList<Elf>()
 
         INPUT.readLines().map { it.toCharArray().withIndex() }.withIndex()
             .forEach { (y, line) ->
