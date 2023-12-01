@@ -5,15 +5,15 @@ import java.io.OutputStream
 import java.io.PrintStream
 
 fun main(args: Array<String>) {
-    val y2022 = ArrayList<Day>()
+    val y2023 = ArrayList<Day>()
     for (i in 1..25)
         try {
             val id = if (i < 10) "0$i" else "$i"
-            val clazz = Class.forName("y2022.Day$id")
+            val clazz = Class.forName("y2023.Day$id")
             val field = clazz.getDeclaredField("INSTANCE")
-            y2022 += field.get(clazz) as Day
+            y2023 += field.get(clazz) as Day
         } catch (e: ClassNotFoundException) { break }
-    createTable(y2022)
+    createTable(y2023)
 }
 
 private fun createTable(days: List<Day>) {

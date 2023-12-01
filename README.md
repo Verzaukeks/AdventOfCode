@@ -1,3 +1,9 @@
+## [Advent of Code 2023](https://adventofcode.com/2023/)
+
+| Day | | a1 | a2 |
+| ---: | :--- | ---: | ---: |
+| 1 | [Trebuchet?!](https://adventofcode.com/2023/day/1) | [_jump to code_](y2023/kotlin/Day01.kt#L8) | [_jump to code_](y2023/kotlin/Day01.kt#L21) |
+
 ## [Advent of Code 2022](https://adventofcode.com/2022/)
 
 | Day | | a1 | a2 |
