@@ -9,8 +9,9 @@ abstract class Day {
     abstract val name: String
     val year = javaClass.packageName.substring(1).toInt()
     val day = javaClass.simpleName.substring(3).toInt()
+    val dayS: String ; get() = if (day < 10) "0$day" else "$day"
     val INPUT by lazy {
-        val file = File("y$year/inputs/d" + (if (day < 10) "0" else "") + day)
+        val file = File("y$year/inputs/d$dayS")
         if (!file.exists() || file.length() == 0L) downloadFile(file)
         file
     }
