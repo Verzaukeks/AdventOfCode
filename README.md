@@ -3,6 +3,7 @@
 | Day | | a1 | a2 |
 | ---: | :--- | ---: | ---: |
 | 1 | [Trebuchet?!](https://adventofcode.com/2023/day/1) | [_jump to code_](y2023/kotlin/Day01.kt#L8) | [_jump to code_](y2023/kotlin/Day01.kt#L21) |
+| 2 | [Cube Conundrum](https://adventofcode.com/2023/day/2) | [_jump to code_](y2023/kotlin/Day02.kt#L30) | [_jump to code_](y2023/kotlin/Day02.kt#L43) |
 
 ## [Advent of Code 2022](https://adventofcode.com/2022/)
 
