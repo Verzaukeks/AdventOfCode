@@ -64,7 +64,7 @@ object Day05 : Day() {
                 getMin(ra, mapIdx, mapJdx+1),
                 getMin(rb.first+off..rb.last+off, mapIdx+1, 0),
                 getMin(rc, mapIdx, mapJdx+1),
-            ).min()
+            ).minOrNull()!!
         }
 
         println(seeds.minOf { getMin(it, 0, 0) })
