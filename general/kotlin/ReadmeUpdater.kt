@@ -27,7 +27,7 @@ private fun createTable(days: List<Day>) {
 
     content = "$before\n"
     content += "| Day | | 1. Star | 2. Star |\n"
-    content += "| ---: | :--- | ---: | ---: |\n"
+    content += "| ---: | :--- | :--- | :--- |\n"
 
     days.forEach { day ->
         val name = "[${day.name}](https://adventofcode.com/${day.year}/day/${day.day})"
