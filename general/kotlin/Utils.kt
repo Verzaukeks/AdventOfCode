@@ -1,5 +1,7 @@
 package general
 
+import kotlin.math.absoluteValue
+
 operator fun String.times(times: Int): String {
     val string = StringBuilder(length * times)
     repeat(times) { string.append(this) }
@@ -33,4 +35,21 @@ fun String.len(len: Int): String {
     if (length < len) return " " + len(len - 1)
     if (length > len) return substring(length - len)
     return this
+}
+
+fun gcd(a: Long, b: Long): Long {
+    if (a == 0L) return b.absoluteValue
+    if (b == 0L) return a.absoluteValue
+
+    var num1 = a
+    var num2 = b
+    do {
+        num1 = num2.also { num2 = num1 % num2 }
+    } while (num2 != 0L)
+
+    return num1.absoluteValue
+}
+
+fun lcm(a: Long, b: Long): Long {
+    return (a / gcd(a, b) * b).absoluteValue
 }
