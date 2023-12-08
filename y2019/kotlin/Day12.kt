@@ -1,6 +1,7 @@
 package y2019
 
 import general.Day
+import general.lcm
 import kotlin.math.absoluteValue
 
 object Day12 : Day() {
@@ -95,24 +96,7 @@ object Day12 : Day() {
             break
         }
 
-        val interval = leastCommonMultiple(intervalX, leastCommonMultiple(intervalY, intervalZ))
+        val interval = lcm(intervalX, lcm(intervalY, intervalZ))
         println(interval)
-    }
-
-    private fun greatestCommonDivisor(a: Long, b: Long): Long {
-        if (a == 0L) return b.absoluteValue
-        if (b == 0L) return a.absoluteValue
-
-        var aa = a
-        var bb = b
-        do {
-            aa = bb.also { bb = aa % bb }
-        } while (bb != 0L)
-
-        return aa.absoluteValue
-    }
-
-    private fun leastCommonMultiple(a: Long, b: Long): Long {
-        return (a / greatestCommonDivisor(a, b) * b).absoluteValue
     }
 }
