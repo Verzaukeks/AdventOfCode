@@ -20,12 +20,14 @@ abstract class Day {
     abstract fun a2()
 
     private fun downloadFile(file: File) {
-        val session = System.getenv("session") ?: return
+        val agent = System.getenv("aoc-agent") ?: return
+        val session = System.getenv("aoc-session") ?: return
 
         val url = URL("https://adventofcode.com/$year/day/$day/input")
         val conn = url.openConnection()
 
-        conn.addRequestProperty("Cookie", "session=$session")
+        conn.setRequestProperty("User-Agent", agent)
+        conn.setRequestProperty("Cookie", "session=$session")
 
         conn.getInputStream().use {
             if (file.exists()) file.delete()
