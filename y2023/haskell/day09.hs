@@ -5,10 +5,7 @@ main = do
     a2
 
 toIntList :: String -> [Int]
-toIntList str = read <$> split str
-    where split [] = [[]]
-          split (' ':xs) = [] : split xs
-          split ( x :xs) = let (y:ys) = split xs in (x:y) : ys
+toIntList str = read <$> words str
 
 seqq :: [Int] -> Int
 seqq nums | all (==0) nums = 0
