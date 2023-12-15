@@ -26,7 +26,8 @@ a2 :: IO ()
 a2 = do
     inp <- getInput
     let nums = take 300 $ sum . fmap weight2 <$> iterate spinCycle inp
-    let cyl  = drop (300 - cycleLength (reverse nums)) nums
+    let cyl  = drop (length nums - cycleLength (reverse nums)) nums
+    print $ cyl !! ((1000000000 - length nums) `mod` length cyl)
     print $ (nums ++ cycle cyl) !! 1000000000    -- yeah! did someone say maths?
 
 spinCycle :: [String] -> [String]
