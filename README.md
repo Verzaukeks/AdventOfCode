@@ -20,6 +20,8 @@
 | 16 | [The Floor Will Be Lava](https://adventofcode.com/2023/day/16) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day16.hs#L52) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day16.hs#L57) |
 | 17 | [Clumsy Crucible](https://adventofcode.com/2023/day/17) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day17.hs#L59) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day17.hs#L64) |
 | 18 | [Lavaduct Lagoon](https://adventofcode.com/2023/day/18) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day18.hs#L34) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day18.hs#L39) |
+| 19 | [Aplenty](https://adventofcode.com/2023/day/19) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day19.hs#L69) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day19.hs#L76) |
+| 20 | [Pulse Propagation](https://adventofcode.com/2023/day/20) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day20.hs#L97) |  |
 
 ## [Advent of Code 2022](https://adventofcode.com/2022/)
 
