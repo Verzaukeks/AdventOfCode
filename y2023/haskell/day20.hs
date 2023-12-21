@@ -13,6 +13,7 @@ split c s = case rest of
 main :: IO ()
 main = do
     a1
+    a2
 
 
 
@@ -28,6 +29,14 @@ data ModuleType = Broadcast { name :: String, outs :: [String] }
                 | FlipFlop  { name :: String, outs :: [String] }
                 | Nand      { name :: String, outs :: [String] }
                 deriving Show
+
+isFlipFlop :: ModuleType -> Bool
+isFlipFlop (FlipFlop _ _) = True
+isFlipFlop _ = False
+
+isNand :: ModuleType -> Bool
+isNand (Nand _ _) = True
+isNand _ = False
 
 data ModuleState = None
                  | Bit Bool
@@ -99,3 +108,23 @@ a1 = do
     modules <- createModules <$> getInput
     let presses = replicate 1000 [(Low "button", "broadcaster")]
     print $ uncurry (*) $ execState (foldM propagate modules presses) (0,0)
+
+a2 :: IO ()
+a2 = do
+    -- input are 4 binary counters that reset at different numbers
+    -- rx fires when all counters reset at the same moment
+    modules <- getInput
+    let find n = head $ filter (\m -> name m == n) modules
+    let cntrs = getCounterSize modules . find <$> outs (find "broadcaster")
+    print $ foldl lcm 1 cntrs
+
+getCounterSize :: [ModuleType] -> ModuleType -> Int
+getCounterSize modules = f 1
+    where
+        f p (FlipFlop n to) = (+)
+                (if null ff then 0 else f (p*2) (head ff))
+                (if null na then 0 else p)
+            where
+                to' = filter (\m -> name m `elem` to) modules
+                ff = filter isFlipFlop to'
+                na = filter isNand to'
