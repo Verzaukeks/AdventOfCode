@@ -24,6 +24,7 @@
 | 20 | [Pulse Propagation](https://adventofcode.com/2023/day/20) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day20.hs#L106) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day20.hs#L112) |
 | 21 | [Step Counter](https://adventofcode.com/2023/day/21) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day21.hs#L33) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day21.hs#L41) |
 | 22 | [Sand Slabs](https://adventofcode.com/2023/day/22) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day22.hs#L52) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day22.hs#L60) |
+| 23 | [A Long Walk](https://adventofcode.com/2023/day/23) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day23.hs#L49) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day23.hs#L59) |
 
 ## [Advent of Code 2022](https://adventofcode.com/2022/)
 
