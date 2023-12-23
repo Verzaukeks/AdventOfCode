@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - 'y*/**'
       - '!**/*.md'
 
 jobs:
@@ -23,7 +24,7 @@ jobs:
 
       - name: Find Solutions
         run: |
-          kotlinc kotlin/general/ReadmeUpdater.kt -include-runtime -d ReadmeUpdater.jar
+          kotlinc general/kotlin/ReadmeUpdater.kt -include-runtime -d ReadmeUpdater.jar
           kotlin -classpath ReadmeUpdater.jar ReadmeUpdaterKt
 
       - name: Create README
