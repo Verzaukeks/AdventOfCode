@@ -5,8 +5,8 @@ enum class Language(val logo: String, val getFile: (String) -> String, val metho
     HASKELL("https://www.haskell.org/img/favicon.ico", { "haskell/day$it.hs" }, "a1 :: IO" to "a2 :: IO"),
 }
 
-private val yFolder = File(".").listFiles()!!.last { it.isDirectory && it.name.startsWith("y") }
-private val names = File(yFolder, "names.txt").readLines()
+private val yFolder = File("").listFiles()!!.sortedBy { it.name }.last { it.isDirectory && it.name.startsWith("y") }
+private val names = File(yFolder.absoluteFile, "names.txt").readLines()
 
 fun main() {
     val sb = StringBuilder()
@@ -16,7 +16,7 @@ fun main() {
         var links1 = ""
         var links2 = ""
 
-        for (lang in Language.values()) {
+        for (lang in Language.entries) {
             val (l1, l2) = find(lang, day)
             val format = "[<img src=\"${lang.logo}\" width=\"32\" height=\"32\"/>]("
             if (l1 != null) links1 += " $format$l1)"
