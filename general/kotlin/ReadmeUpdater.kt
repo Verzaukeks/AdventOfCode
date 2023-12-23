@@ -5,10 +5,11 @@ enum class Language(val logo: String, val getFile: (String) -> String, val metho
     HASKELL("https://www.haskell.org/img/favicon.ico", { "haskell/day$it.hs" }, "a1 :: IO" to "a2 :: IO"),
 }
 
-private val yFolder = File("").listFiles()!!.sortedBy { it.name }.last { it.isDirectory && it.name.startsWith("y") }
-private val names = File(yFolder.absoluteFile, "names.txt").readLines()
+private val yFolder by lazy { File(".").listFiles()!!.sortedBy { it.name }.last { it.isDirectory && it.name.startsWith("y") } }
+private val names by lazy { File(yFolder.absoluteFile, "names.txt").readLines() }
 
 fun main() {
+    println(File(".").absoluteFile)
     val sb = StringBuilder()
     for (day in 1..25) {
         val name = names.getOrNull(day) ?: continue
