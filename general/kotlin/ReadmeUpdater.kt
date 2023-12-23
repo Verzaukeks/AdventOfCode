@@ -1,36 +1,18 @@
-package general
-
 import java.io.File
 
-enum class Language(val logo: String, val getFile: (Day) -> String, val methods: Pair<String, String>) {
-    KOTLIN("https://kotlinlang.org/assets/images/favicon.svg", { "kotlin/${it.javaClass.simpleName}.kt" }, "fun a1" to "fun a2"),
-    HASKELL("https://www.haskell.org/img/favicon.ico", { "haskell/day${it.dayS}.hs" }, "a1 :: IO" to "a2 :: IO"),
+enum class Language(val logo: String, val getFile: (String) -> String, val methods: Pair<String, String>) {
+    KOTLIN("https://kotlinlang.org/assets/images/favicon.svg", { "kotlin/Day$it.kt" }, "fun a1" to "fun a2"),
+    HASKELL("https://www.haskell.org/img/favicon.ico", { "haskell/day$it.hs" }, "a1 :: IO" to "a2 :: IO"),
 }
 
-fun main(args: Array<String>) {
-    val days = ArrayList<Day>()
-    for (i in 1..25)
-        try {
-            val id = if (i < 10) "0$i" else "$i"
-            val clazz = Class.forName("y2023.Day$id")
-            val field = clazz.getDeclaredField("INSTANCE")
-            days += field.get(clazz) as Day
-        } catch (e: ClassNotFoundException) { break }
-    createTable(days)
-}
+private val yFolder = File(".").listFiles()!!.last { it.isDirectory && it.name.startsWith("y") }
+private val names = File(yFolder, "names.txt").readLines()
 
-private fun createTable(days: List<Day>) {
-
-    var content = File("README.md").readText().replace("\r\n", "\n")
-    val before = content.substringBefore("\n\n") + "\n"
-    val after = "\n" + content.substringAfter("\n\n").substringAfter("\n\n")
-
-    content = "$before\n"
-    content += "| Day | | 1. Star | 2. Star |\n"
-    content += "| ---: | :--- | :--- | :--- |\n"
-
-    days.forEach { day ->
-        val name = "[${day.name}](https://adventofcode.com/${day.year}/day/${day.day})"
+fun main() {
+    val sb = StringBuilder()
+    for (day in 1..25) {
+        val name = names.getOrNull(day) ?: continue
+        val prefix = "$day | [$name](https://adventofcode.com/${yFolder.name.substring(1)}/day/$day)"
         var links1 = ""
         var links2 = ""
 
@@ -41,15 +23,13 @@ private fun createTable(days: List<Day>) {
             if (l2 != null) links2 += " $format$l2)"
         }
 
-        content += "| ${day.day} | $name | $links1 | $links2 |\n"
+        sb.appendLine("| $prefix | $links1 | $links2 |")
     }
-
-    content += after
-    File("README.md").writeText(content)
+    File("CONTENT.md").writeText(sb.toString())
 }
 
-private fun find(lang: Language, day: Day): Pair<String?, String?> {
-    val path = "y${day.year}/${lang.getFile(day)}"
+private fun find(lang: Language, day: Int): Pair<String?, String?> {
+    val path = yFolder.name + "/" + lang.getFile(if (day < 10) "0$day" else day.toString())
     val file = File(path)
     if (!file.exists()) return Pair(null, null)
     val content = file.readText()

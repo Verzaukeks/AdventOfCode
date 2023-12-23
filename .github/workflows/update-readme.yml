@@ -1,0 +1,42 @@
+name: Update README
+
+on:
+  push:
+    paths:
+      - '!**/*.md'
+
+jobs:
+  update:
+
+    name: Get and Set
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Header & Footer
+        run: |
+          head -4 README.md > HEADER.md
+          tail -n +4 README.md | awk '/^$/{p=1}p' | tail -n +2 > FOOTER.md
+
+      - name: Find Solutions
+        run: |
+          kotlinc kotlin/general/ReadmeUpdater.kt -include-runtime -d ReadmeUpdater.jar
+          kotlin -classpath ReadmeUpdater.jar ReadmeUpdaterKt
+
+      - name: Create README
+        run: |
+          rm README.md
+          cat HEADER.md > README.md
+          cat CONTENT.md >> README.md
+          cat FOOTER.md >> README.md
+
+      - name: Upload
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git add README.md
+          git commit -m "Update Readme"
+          git push
