@@ -3,6 +3,7 @@ import java.io.File
 enum class Language(val logo: String, val getFile: (String) -> String, val methods: Pair<String, String>) {
     KOTLIN("https://kotlinlang.org/assets/images/favicon.svg", { "kotlin/Day$it.kt" }, "fun a1" to "fun a2"),
     HASKELL("https://www.haskell.org/img/favicon.ico", { "haskell/day$it.hs" }, "a1 :: IO" to "a2 :: IO"),
+    NASM("https://nasm.us/images/nasm.png", { "nasm/day$it.asm" }, "a1:" to "a2:")
 }
 
 private val yFolder = File(".").listFiles()!!.sortedBy { it.name }.last { it.isDirectory && it.name.startsWith("y") }

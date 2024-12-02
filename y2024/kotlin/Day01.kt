@@ -3,13 +3,8 @@ package y2024
 import general.Day
 import kotlin.math.absoluteValue
 
-fun main() {
-//    Day01.a1()
-    Day01.a2()
-}
-
 object Day01 : Day() {
-    override val name = ""
+    override val name = "Historian Hysteria"
 
     override fun a1() {
         val bs = ArrayList<Int>()
