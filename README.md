@@ -2,6 +2,8 @@
 
 | Day | | 1. Star | 2. Star |
 | ---: | :--- | :--- | :--- |
+| 1 | [Historian Hysteria](https://adventofcode.com/2024/day/1) |  [<img src="https://kotlinlang.org/assets/images/favicon.svg" width="32" height="32"/>](y2024/kotlin/Day01.kt#L9) [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day01.asm#L149) |  [<img src="https://kotlinlang.org/assets/images/favicon.svg" width="32" height="32"/>](y2024/kotlin/Day01.kt#L22) [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day01.asm#L178) |
+| 2 | [Red-Nosed Reports](https://adventofcode.com/2024/day/2) |  [<img src="https://kotlinlang.org/assets/images/favicon.svg" width="32" height="32"/>](y2024/kotlin/Day02.kt#L9) [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day02.asm#L77) |  [<img src="https://kotlinlang.org/assets/images/favicon.svg" width="32" height="32"/>](y2024/kotlin/Day02.kt#L23) |
 
 ## [Advent of Code 2023](https://adventofcode.com/2023/)
 
