@@ -4,8 +4,6 @@ import general.Day
 import kotlin.math.absoluteValue
 
 object Day02 : Day() {
-    override val name = "Red-Nosed Reports"
-
     override fun a1() {
         INPUT
             .readLines()
