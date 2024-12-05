@@ -90,11 +90,11 @@ a1_dia1:
     step 3, 3, 'S', a1_dia1_rev
     add r10, 1
 a1_dia1_rev:
-    step -1, -1, 'M', a1_dia2
-    step -2, -2, 'A', a1_dia2
-    step -3, -3, 'S', a1_dia2
+    step -1, -1, 'M', a1_dia2_
+    step -2, -2, 'A', a1_dia2_
+    step -3, -3, 'S', a1_dia2_
     add r10, 1
-a1_dia2:
+a1_dia2_:
     step -1, 1, 'M', a1_dia2_rev
     step -2, 2, 'A', a1_dia2_rev
     step -3, 3, 'S', a1_dia2_rev
