@@ -16,7 +16,7 @@ NASM_FLAGS = -f elf64 -g
 clean:
 	rm -f *.o *.exe
 
-# C Call Order
+# win x86-64 C Call Order
 # RCX, RDX, R8, R9, STACK
 
 # RAX: Accumulator Register

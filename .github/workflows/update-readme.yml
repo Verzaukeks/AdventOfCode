@@ -10,7 +10,7 @@ on:
 jobs:
   update:
 
-    name: Get and Set
+    name: Update Readme
     runs-on: ubuntu-latest
 
     steps:
@@ -40,5 +40,10 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
           git add README.md
-          git commit -m "Update Readme"
-          git push
+          
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update Readme"
+            git push
+          fi
