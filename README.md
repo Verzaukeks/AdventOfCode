@@ -8,6 +8,7 @@
 | 4 | [Ceres Search](https://adventofcode.com/2024/day/4) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day04.asm#L62) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day04.asm#L123) |
 | 5 | [Print Queue](https://adventofcode.com/2024/day/5) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day05.asm#L87) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day05.asm#L88) |
 | 6 | [Guard Gallivant](https://adventofcode.com/2024/day/6) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day06.asm#L49) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day06.asm#L129) |
+| 7 | [Bridge Repair](https://adventofcode.com/2024/day/7) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day07.asm#L82) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day07.asm#L177) |
 
 ## [Advent of Code 2023](https://adventofcode.com/2023/)
 
