@@ -12,6 +12,7 @@
 | 8 | [Resonant Collinearity](https://adventofcode.com/2024/day/8) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day08.asm#L118) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day08.asm#L121) |
 | 9 | [Disk Fragmenter](https://adventofcode.com/2024/day/9) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day09.asm#L49) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day09.asm#L56) |
 | 10 | [Hoof It](https://adventofcode.com/2024/day/10) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day10.asm#L39) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day10.asm#L40) |
+| 11 | [Plutonian Pebbles](https://adventofcode.com/2024/day/11) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day11.asm#L111) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day11.asm#L112) |
 
 ## [Advent of Code 2023](https://adventofcode.com/2023/)
 
