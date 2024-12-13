@@ -11,3 +11,4 @@ Disk Fragmenter
 Hoof It
 Plutonian Pebbles
 Garden Groups
+Claw Contraption
