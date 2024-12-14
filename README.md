@@ -15,6 +15,7 @@
 | 11 | [Plutonian Pebbles](https://adventofcode.com/2024/day/11) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day11.asm#L111) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day11.asm#L112) |
 | 12 | [Garden Groups](https://adventofcode.com/2024/day/12) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day12.asm#L225) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day12.asm#L263) |
 | 13 | [Claw Contraption](https://adventofcode.com/2024/day/13) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day13.asm#L92) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day13.asm#L150) |
+| 14 | [Restroom Redoubt](https://adventofcode.com/2024/day/14) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day14.asm#L112) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day14.asm#L183) |
 
 ## [Advent of Code 2023](https://adventofcode.com/2023/)
 
