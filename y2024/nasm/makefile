@@ -16,17 +16,22 @@ NASM_FLAGS = -f elf64 -g
 clean:
 	rm -f *.o *.exe
 
-# win x86-64 C Call Order
-# RCX, RDX, R8, R9, STACK
+# Microsoft x64 calling convention
+# https://en.wikipedia.org/wiki/X86_calling_conventions#Microsoft_x64_calling_convention
 
-# RAX: Accumulator Register
-# RBX: Base Register
-# RCX: Count Register
-# RDX: Data Register
-# RSI: Source Index
+# Parameters:      RCX, RDX, R8, R9, STACK
+# Shadow-Space:    32 Bytes
+# Stack-Alignment: 16 Bytes
+
+# RAX: Accumulator Register (volatile)
+# RBX:        Base Register
+# RCX:       Count Register (volatile)
+# RDX:        Data Register (volatile)
+# RSI:      Source Index
 # RDI: Destination Index
-# R8-R15: Extended General-Purpose Registers
+# R8 -R11: Extended General-Purpose Registers (volatile)
+# R12-R15: Extended General-Purpose Registers 
 
-# RSP: Stack Pointer
-# RBP: Base Pointer
+# RSP:       Stack Pointer
+# RBP:        Base Pointer
 # RIP: Instruction Pointer
