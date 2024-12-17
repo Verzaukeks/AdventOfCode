@@ -18,6 +18,7 @@
 | 14 | [Restroom Redoubt](https://adventofcode.com/2024/day/14) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day14.asm#L112) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day14.asm#L183) |
 | 15 | [Warehouse Woes](https://adventofcode.com/2024/day/15) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day15.asm#L67) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day15.asm#L154) |
 | 16 | [Reindeer Maze](https://adventofcode.com/2024/day/16) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day16.asm#L177) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day16.asm#L262) |
+| 17 | [Chronospatial Computer](https://adventofcode.com/2024/day/17) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day17.asm#L136) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day17.asm#L169) |
 
 ## [Advent of Code 2023](https://adventofcode.com/2023/)
 
