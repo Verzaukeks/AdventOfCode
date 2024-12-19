@@ -20,6 +20,7 @@
 | 16 | [Reindeer Maze](https://adventofcode.com/2024/day/16) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day16.asm#L177) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day16.asm#L262) |
 | 17 | [Chronospatial Computer](https://adventofcode.com/2024/day/17) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day17.asm#L136) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day17.asm#L169) |
 | 18 | [RAM Run](https://adventofcode.com/2024/day/18) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day18.asm#L85) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day18.asm#L190) |
+| 19 | [Linen Layout](https://adventofcode.com/2024/day/19) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day19.asm#L85) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day19.asm#L86) |
 
 ## [Advent of Code 2023](https://adventofcode.com/2023/)
 
