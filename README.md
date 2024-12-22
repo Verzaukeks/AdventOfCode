@@ -22,7 +22,7 @@
 | 18 | [RAM Run](https://adventofcode.com/2024/day/18) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day18.asm#L85) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day18.asm#L190) |
 | 19 | [Linen Layout](https://adventofcode.com/2024/day/19) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day19.asm#L85) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day19.asm#L86) |
 | 20 | [Race Condition](https://adventofcode.com/2024/day/20) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day20.asm#L39) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day20.asm#L152) |
-| 21 | [Keypad Conundrum](https://adventofcode.com/2024/day/21) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day21.asm#L94) |  |
+| 21 | [Keypad Conundrum](https://adventofcode.com/2024/day/21) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day21.asm#L120) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day21.asm#L123) |
 | 22 | [Monkey Market](https://adventofcode.com/2024/day/22) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day22.asm#L80) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day22.asm#L117) |
 
 ## [Advent of Code 2023](https://adventofcode.com/2023/)
