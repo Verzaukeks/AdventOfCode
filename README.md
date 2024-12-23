@@ -27,6 +27,9 @@
 
 ## [Advent of Code 2023](https://adventofcode.com/2023/)
 
+<details>
+    <summary>Links</summary>
+
 | Day | | 1. Star | 2. Star |
 | ---: | :--- | :--- | :--- |
 | 1 | [Trebuchet?!](https://adventofcode.com/2023/day/1) |  [<img src="https://kotlinlang.org/assets/images/favicon.svg" width="32" height="32"/>](y2023/kotlin/Day01.kt#L8) [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day01.hs#L14) |  [<img src="https://kotlinlang.org/assets/images/favicon.svg" width="32" height="32"/>](y2023/kotlin/Day01.kt#L21) [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day01.hs#L19) |
@@ -54,6 +57,8 @@
 | 23 | [A Long Walk](https://adventofcode.com/2023/day/23) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day23.hs#L49) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day23.hs#L59) |
 | 24 | [Never Tell Me The Odds](https://adventofcode.com/2023/day/24) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day24.hs#L58) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day24.hs#L63) |
 | 25 | [Snowverload](https://adventofcode.com/2023/day/25) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day25.hs#L75) |  [<img src="https://www.haskell.org/img/favicon.ico" width="32" height="32"/>](y2023/haskell/day25.hs#L86) |
+
+</details>
 
 ## [Advent of Code 2022](https://adventofcode.com/2022/)
 
