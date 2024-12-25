@@ -23,3 +23,4 @@ Keypad Conundrum
 Monkey Market
 LAN Party
 Crossed Wires
+Code Chronicle
