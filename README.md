@@ -26,6 +26,7 @@
 | 22 | [Monkey Market](https://adventofcode.com/2024/day/22) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day22.asm#L80) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day22.asm#L117) |
 | 23 | [LAN Party](https://adventofcode.com/2024/day/23) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day23.asm#L79) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day23.asm#L146) |
 | 24 | [Crossed Wires](https://adventofcode.com/2024/day/24) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day24.asm#L158) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day24.asm#L217) |
+| 25 | [Code Chronicle](https://adventofcode.com/2024/day/25) |  [<img src="https://nasm.us/images/nasm.png" width="32" height="32"/>](y2024/nasm/day25.asm#L27) |  |
 
 ## [Advent of Code 2023](https://adventofcode.com/2023/)
 
