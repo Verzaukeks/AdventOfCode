@@ -2,6 +2,7 @@
 
 | Day | | 1. Star | 2. Star |
 | ---: | :--- | :--- | :--- |
+| 1 | [Secret Entrance](https://adventofcode.com/2025/day/1) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day01.lua#L24) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day01.lua#L38) |
 
 ## [Advent of Code 2024](https://adventofcode.com/2024/)
 
