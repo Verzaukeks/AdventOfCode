@@ -8,12 +8,12 @@ enum class Language(val logo: String, val getFile: (String) -> String, val metho
 }
 
 private val yFolder = File(".").listFiles()!!.sortedBy { it.name }.last { it.isDirectory && it.name.startsWith("y") }
-private val names = File(yFolder.absoluteFile, "names.txt").readLines()
+private val names = File(yFolder.absoluteFile, "names.txt").readLines().filter { it.isNotBlank() }
 
 fun main() {
     val sb = StringBuilder()
     for (day in 1..25) {
-        val name = names.getOrNull(day) ?: continue
+        val name = names.getOrNull(day - 1) ?: continue
         val prefix = "$day | [$name](https://adventofcode.com/${yFolder.name.substring(1)}/day/$day)"
         var links1 = ""
         var links2 = ""
