@@ -5,6 +5,7 @@
 | 1 | [Secret Entrance](https://adventofcode.com/2025/day/1) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day01.lua#L24) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day01.lua#L38) |
 | 2 | [Gift Shop](https://adventofcode.com/2025/day/2) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day02.lua#L40) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day02.lua#L57) |
 | 3 | [Lobby](https://adventofcode.com/2025/day/3) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day03.lua#L24) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day03.lua#L55) |
+| 4 | [Printing Department](https://adventofcode.com/2025/day/4) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day04.lua#L45) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day04.lua#L60) |
 
 ## [Advent of Code 2024](https://adventofcode.com/2024/)
 
