@@ -7,6 +7,7 @@
 | 3 | [Lobby](https://adventofcode.com/2025/day/3) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day03.lua#L24) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day03.lua#L55) |
 | 4 | [Printing Department](https://adventofcode.com/2025/day/4) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day04.lua#L45) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day04.lua#L60) |
 | 5 | [Cafeteria](https://adventofcode.com/2025/day/5) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day05.lua#L33) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day05.lua#L50) |
+| 6 | [Trash Compactor](https://adventofcode.com/2025/day/6) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day06.lua#L61) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day06.lua#L80) |
 
 ## [Advent of Code 2024](https://adventofcode.com/2024/)
 
