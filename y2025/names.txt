@@ -3,3 +3,4 @@ Gift Shop
 Lobby
 Printing Department
 Cafeteria
+Trash Compactor
