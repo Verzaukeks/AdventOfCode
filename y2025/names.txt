@@ -5,3 +5,4 @@ Printing Department
 Cafeteria
 Trash Compactor
 Laboratories
+Playground
