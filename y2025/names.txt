@@ -6,3 +6,4 @@ Cafeteria
 Trash Compactor
 Laboratories
 Playground
+Movie Theater
