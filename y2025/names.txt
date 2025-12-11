@@ -8,3 +8,4 @@ Laboratories
 Playground
 Movie Theater
 Factory
+Reactor
