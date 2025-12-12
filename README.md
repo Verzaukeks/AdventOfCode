@@ -13,6 +13,7 @@
 | 9 | [Movie Theater](https://adventofcode.com/2025/day/9) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day09.lua#L25) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day09.lua#L41) |
 | 10 | [Factory](https://adventofcode.com/2025/day/10) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day10.lua#L68) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day10.lua#L98) |
 | 11 | [Reactor](https://adventofcode.com/2025/day/11) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day11.lua#L29) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day11.lua#L45) |
+| 12 | [Christmas Tree Farm](https://adventofcode.com/2025/day/12) |  [<img src="https://www.lua.org/images/logo.gif" width="32" height="32"/>](y2025/lua/day12.lua#L51) |  |
 
 ## [Advent of Code 2024](https://adventofcode.com/2024/)
 
