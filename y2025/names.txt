@@ -9,3 +9,4 @@ Playground
 Movie Theater
 Factory
 Reactor
+Christmas Tree Farm
